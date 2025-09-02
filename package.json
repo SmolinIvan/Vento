@@ -1,30 +1,35 @@
 {
-  "name": "vento",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "dev": "webpack serve --mode development --open"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "css-loader": "^7.1.2",
-    "html-webpack-plugin": "^5.6.4",
-    "style-loader": "^4.0.0",
-    "ts-loader": "^9.5.2",
-    "typescript": "^5.9.2",
-    "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
-  },
-  "dependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
-  }
+    "name": "react-ts-css-modules",
+    "version": "1.0.0",
+    "description": "A React TypeScript project with CSS modules",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack serve --mode development",
+        "build": "webpack --mode production",
+        "dev": "webpack serve --mode development --open"
+    },
+    "keywords": [
+        "react",
+        "typescript",
+        "css-modules",
+        "webpack"
+    ],
+    "author": "Developer",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/react": "^18.2.45",
+        "@types/react-dom": "^18.2.18",
+        "css-loader": "^6.8.1",
+        "html-webpack-plugin": "^5.5.3",
+        "style-loader": "^3.3.3",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.3.3",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
 }
