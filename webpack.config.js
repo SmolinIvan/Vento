@@ -32,8 +32,16 @@ module.exports = {
         ],
     },
     resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@utils': path.resolve(__dirname, 'src/utils'),
+            // другие алиасы...
+        },
         extensions: ['.tsx', '.ts', '.js'],
     },
+
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -49,5 +57,6 @@ module.exports = {
         port: 3000,
         open: true,
         hot: true,
+        historyApiFallback: true,
     },
 };

@@ -1,10 +1,15 @@
+import { LandingPage, MainMenuPage } from '@/pages';
 import React from 'react';
-import LandingPage from '../pages/LandingPage/LandingPage';
+
+import { Route, Routes } from 'react-router-dom';
 
 const App: React.FC = () => {
     return (
         <div className="app">
-            <LandingPage />
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/main" element={<MainMenuPage />} />
+            </Routes>
         </div>
     );
 };
