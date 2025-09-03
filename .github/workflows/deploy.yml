@@ -2,17 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 
-# Разрешения для GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Конcurrency для избежания конфликтов деплоя
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -24,6 +20,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -37,8 +34,25 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Build
+    - name: Build application
       run: npm run build
+
+    - name: Verify build output
+      run: |
+        echo "Проверка содержимого папки dist:"
+        ls -la dist/
+        if [ ! -f "dist/bundle.js" ]; then
+          echo "❌ Ошибка: bundle.js не найден в папке dist"
+          exit 1
+        fi
+        if [ ! -f "dist/index.html" ]; then
+          echo "❌ Ошибка: index.html не найден в папке dist"
+          exit 1
+        fi
+        echo "✅ Проверка сборки пройдена успешно"
+
+    - name: Create .nojekyll file
+      run: touch ./dist/.nojekyll
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -51,4 +65,3 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
