@@ -43,7 +43,7 @@ module.exports = {
     },
 
     output: {
-        filename: 'bundle.[contenthash].js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         publicPath: '/', // Важно для GitHub Pages
