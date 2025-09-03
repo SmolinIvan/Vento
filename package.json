@@ -6,7 +6,7 @@
     "scripts": {
         "start": "webpack serve --mode development",
         "build:gh": "webpack --mode production --env publicPath=/Vento/",
-        "build:local": "webpack --mode development",
+        "build": "webpack --mode development",
         "dev": "webpack serve --mode development --open"
     },
     "homepage": "https://smolinivan.github.io/Vento",

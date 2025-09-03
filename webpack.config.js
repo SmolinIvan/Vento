@@ -61,13 +61,13 @@ module.exports = {
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist'),
-            publicPath: '/Vento/', // ✅ Добавьте и здесь
+            publicPath: '/', // ✅ Добавьте и здесь
         },
         port: 3000,
         open: true,
         hot: true,
         historyApiFallback: {
-            index: '/Vento/index.html', // ✅ Для SPA роутинга
+            historyApiFallback: true, // ✅ Для SPA роутинга
         },
     },
 };
