@@ -2,72 +2,72 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-module.exports = (env) => {
-    const isProduction = env === 'production';
-    const publicPath = isProduction ? '/Vento/' : '/';
-
-    return {
-        entry: path.resolve(__dirname, './src/index.tsx'),
-        module: {
-            rules: [
-                {
-                    test: /\.tsx?$/,
-                    use: 'ts-loader',
-                    exclude: /node_modules/,
-                },
-                {
-                    test: /\.module\.css$/i,
-                    use: [
-                        'style-loader',
-                        {
-                            loader: 'css-loader',
-                            options: { modules: true },
-                        },
-                    ],
-                },
-                {
-                    test: /\.css$/i,
-                    exclude: /\.module\.css$/i,
-                    use: ['style-loader', 'css-loader'],
-                },
-                {
-                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                    type: 'asset/resource',
-                },
-            ],
-        },
-        resolve: {
-            alias: {
-                '@': path.resolve(__dirname, 'src'),
-                '@pages': path.resolve(__dirname, 'src/pages'),
-                '@components': path.resolve(__dirname, 'src/components'),
-                '@utils': path.resolve(__dirname, 'src/utils'),
-                // другие алиасы...
+module.exports = {
+    entry: path.resolve(__dirname, './src/index.tsx'),
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
-            extensions: ['.tsx', '.ts', '.js'],
-        },
-
-        output: {
-            filename: 'bundle.js',
-            path: path.resolve(__dirname, 'dist'),
-            clean: true,
-            publicPath: publicPath, // Важно для GitHub Pages
-        },
-        plugins: [
-            new HtmlWebpackPlugin({
-                template: './public/index.html',
-                filename: 'index.html',
-            }),
-            new webpack.DefinePlugin({
-                'process.env.PUBLIC_URL': JSON.stringify(publicPath),
-            }),
+            {
+                test: /\.module\.css$/i,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: { modules: true },
+                    },
+                ],
+            },
+            {
+                test: /\.css$/i,
+                exclude: /\.module\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ],
-        devServer: {
-            static: './dist',
-            port: 3000,
-            open: true,
-            hot: true,
-            historyApiFallback: true,
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@utils': path.resolve(__dirname, 'src/utils'),
+            // другие алиасы...
         },
-    };
+        extensions: ['.tsx', '.ts', '.js'],
+    },
+
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
+        publicPath: '/Vento/', // ✅ Важно: должен начинаться и заканчиваться с /
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'index.html',
+        }),
+        new webpack.DefinePlugin({
+            'process.env.PUBLIC_URL': JSON.stringify('/Vento/'),
+        }),
+    ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+            publicPath: '/Vento/', // ✅ Добавьте и здесь
+        },
+        port: 3000,
+        open: true,
+        hot: true,
+        historyApiFallback: {
+            index: '/Vento/index.html', // ✅ Для SPA роутинга
+        },
+    },
 };

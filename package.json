@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "webpack serve --mode development",
-        "build": "PUBLIC_URL=/Vento webpack --mode production && touch ./dist/.nojekyll",
+        "build:gh": "webpack --mode production --env publicPath=/Vento/",
         "build:local": "webpack --mode development",
         "dev": "webpack serve --mode development --open"
     },
