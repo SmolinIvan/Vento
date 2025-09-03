@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: path.resolve(__dirname, './src/index.tsx'),
@@ -43,7 +44,7 @@ module.exports = {
     },
 
     output: {
-        filename: 'bundlejs',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         publicPath: '/', // Важно для GitHub Pages
@@ -51,6 +52,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
+            filename: 'index.html',
+        }),
+        new webpack.DefinePlugin({
+            'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL || '/'),
         }),
     ],
     devServer: {
