@@ -4,7 +4,8 @@ import './index.css';
 import App from './app/App';
 import { BrowserRouter } from 'react-router-dom';
 
-const baseName = process.env.NODE_ENV === 'production' ? '/your-repo-name' : '/';
+const isGitHubPages = window.location.hostname === 'smolinivan.github.io';
+const baseName = isGitHubPages ? '/Vento' : '/';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
