@@ -9,9 +9,20 @@ const App: React.FC = () => {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/main" element={<MainMenuPage />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
     );
 };
+
+const NotFound: React.FC = () => {
+  return (
+    <div style={{ padding: '2rem', textAlign: 'center' }}>
+      <h2>404 - Страница не найдена</h2>
+      <p>Попробуйте перейти на <a href="/Vento/">главную страницу</a></p>
+    </div>
+  );
+};
+
 
 export default App;
