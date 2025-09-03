@@ -5,9 +5,10 @@
     "main": "index.js",
     "scripts": {
         "start": "webpack serve --mode development",
-        "build:gh": "webpack --mode production --env publicPath=/Vento/",
-        "build": "webpack --mode development",
-        "dev": "webpack serve --mode development --open"
+        "build": "webpack --mode production",
+        "deploy": "npm run build && gh-pages -d dist",
+        "dev": "webpack serve --mode development --open",
+        "predeploy": "npm run build"
     },
     "homepage": "https://smolinivan.github.io/Vento",
     "keywords": [
@@ -31,7 +32,8 @@
         "typescript-eslint": "^8.42.0",
         "webpack": "^5.89.0",
         "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^4.15.1"
+        "webpack-dev-server": "^4.15.1",
+        "gh-pages": "^5.0.0"
     },
     "dependencies": {
         "react": "^18.2.0",
