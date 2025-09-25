@@ -1,37 +1,37 @@
-# name: CI Checks
+name: CI Checks
 
-# on:
-#   pull_request:
-#     branches: [ main, master ]
-#   push:
-#     branches: [ main, master ]
+on:
+  pull_request:
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
 
-# jobs:
-#   checks:
-#     runs-on: ubuntu-latest
+jobs:
+  checks:
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - name: Checkout
-#       uses: actions/checkout@v4
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
 
-#     - name: Setup Node.js
-#       uses: actions/setup-node@v4
-#       with:
-#         node-version: '20'
-#         cache: 'npm'
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
 
-#     - name: Install dependencies
-#       run: npm ci
+    - name: Install dependencies
+      run: npm ci
 
-#     - name: Build
-#       run: npm run build
+    - name: Build
+      run: npm run build
 
-#     - name: Test build output
-#       run: |
-#         if [ ! -f "dist/index.html" ]; then
-#           echo "Error: index.html not found in dist folder"
-#           exit 1
-#         fi
-#         if [ ! -f "dist/.nojekyll" ]; then
-#           echo "Warning: .nojekyll file not found"
-#         fi
+    - name: Test build output
+      run: |
+        if [ ! -f "dist/index.html" ]; then
+          echo "Error: index.html not found in dist folder"
+          exit 1
+        fi
+        if [ ! -f "dist/.nojekyll" ]; then
+          echo "Warning: .nojekyll file not found"
+        fi
