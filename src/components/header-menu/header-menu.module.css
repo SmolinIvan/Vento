@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 85px;
+    margin-top: 20px;
+    margin-right: 65px;
+}
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 193px; /* Width of the SVG */
+    height: 123px; /* Height of the SVG */
+    background-image: url('../../assets/svg/pinkCloud.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.text {
+    position: relative;
+    z-index: 1;
+    color: #E1FD2C9E;
+    font-family: 'Caveat';
+    font-weight: bold;
+    font-size: 48px; /* Adjust size as needed */
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); Add shadow for better visibility */
+}

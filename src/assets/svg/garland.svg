@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="2000" viewBox="0 0 3000 2000">
+  <defs>
+    <!-- String style -->
+    <style>
+      .string { stroke: #cdb9a7; stroke-width: 6; stroke-linecap: round; }
+      .loop { fill: none; stroke: #cdb9a7; stroke-width: 6; }
+      .vein { stroke: rgba(0,0,0,0.18); stroke-width: 3; fill: none; stroke-linecap: round; }
+      .vein2 { stroke: rgba(0,0,0,0.18); stroke-width: 2; fill: none; stroke-linecap: round; }
+      .outline { stroke: rgba(0,0,0,0.25); stroke-width: 3; }
+    </style>
+
+    <!-- Gradients for leaves -->
+    <radialGradient id="gradMaple" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#f04a3a"/>
+      <stop offset="60%" stop-color="#d63c2e"/>
+      <stop offset="100%" stop-color="#a42219"/>
+    </radialGradient>
+
+    <radialGradient id="gradOak" cx="48%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ffd44a"/>
+      <stop offset="60%" stop-color="#f2c230"/>
+      <stop offset="100%" stop-color="#d59f10"/>
+    </radialGradient>
+
+    <radialGradient id="gradBirch" cx="48%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ff9a3a"/>
+      <stop offset="60%" stop-color="#f28c1b"/>
+      <stop offset="100%" stop-color="#c86e0e"/>
+    </radialGradient>
+
+    <!-- Cone gradients -->
+    <radialGradient id="gradCone" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#a4744f"/>
+      <stop offset="60%" stop-color="#8b5e3c"/>
+      <stop offset="100%" stop-color="#6d452a"/>
+    </radialGradient>
+    <linearGradient id="gradScale" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b38966"/>
+      <stop offset="100%" stop-color="#7a5236"/>
+    </linearGradient>
+
+    <!-- Soft shadow under ornaments (very subtle, still isolated) -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- 5 vertical strings -->
+  <g id="strings">
+    <line class="string" x1="300" y1="0" x2="300" y2="1800"/>
+    <line class="string" x1="900" y1="0" x2="900" y2="1800"/>
+    <line class="string" x1="1500" y1="0" x2="1500" y2="1800"/>
+    <line class="string" x1="2100" y1="0" x2="2100" y2="1800"/>
+    <line class="string" x1="2700" y1="0" x2="2700" y2="1800"/>
+  </g>
+
+  <!-- Small loops where ornaments attach -->
+  <g id="loops">
+    <path class="loop" d="M 300 760 c 18 -22, 36 -22, 54 0 c -18 22, -36 22, -54 0 z"/>
+    <path class="loop" d="M 900 740 c 18 -22, 36 -22, 54 0 c -18 22, -36 22, -54 0 z"/>
+    <path class="loop" d="M 1500 780 c 18 -22, 36 -22, 54 0 c -18 22, -36 22, -54 0 z"/>
+    <path class="loop" d="M 2100 760 c 18 -22, 36 -22, 54 0 c -18 22, -36 22, -54 0 z"/>
+    <path class="loop" d="M 2700 800 c 18 -22, 36 -22, 54 0 c -18 22, -36 22, -54 0 z"/>
+  </g>
+
+  <!-- Maple leaf (red) on string 1 -->
+  <g transform="translate(300, 760)" filter="url(#softShadow)">
+    <!-- Tie segment -->
+    <line class="string" x1="0" y1="0" x2="0" y2="60"/>
+    <!-- Leaf -->
+    <g transform="translate(0, 60) scale(1.1)">
+      <path d="
+        M 0 -20
+        C 15 -60, 25 -85, 20 -120
+        C 45 -90, 65 -80, 100 -90
+        C 90 -55, 95 -35, 125 -20
+        C 95 -10, 80 5, 90 35
+        C 60 25, 45 30, 30 55
+        C 15 35, 0 35, -15 55
+        C -30 30, -45 25, -75 35
+        C -65 5, -80 -10, -110 -20
+        C -80 -35, -75 -55, -85 -90
+        C -50 -80, -30 -90, -5 -120
+        C -8 -85, 2 -60, 0 -20
+        z" fill="url(#gradMaple)" class="outline"/>
+      <!-- Maple veins -->
+      <path class="vein" d="M 0 -10 L 0 75"/>
+      <path class="vein2" d="M 0 25 C 25 20, 40 15, 55 0"/>
+      <path class="vein2" d="M 0 25 C -25 20, -40 15, -55 0"/>
+      <path class="vein2" d="M 0 -5 C 30 -10, 50 -20, 75 -40"/>
+      <path class="vein2" d="M 0 -5 C -30 -10, -50 -20, -75 -40"/>
+    </g>
+  </g>
+
+  <!-- Pine cone on string 2 -->
+  <g transform="translate(900, 740)" filter="url(#softShadow)">
+    <line class="string" x1="0" y1="0" x2="0" y2="70"/>
+    <g transform="translate(0, 70)">
+      <!-- Cone body -->
+      <ellipse cx="0" cy="140" rx="85" ry="120" fill="url(#gradCone)" class="outline"/>
+      <!-- Scales rows -->
+      <g transform="translate(0, 40)">
+        <g fill="url(#gradScale)" stroke="rgba(0,0,0,0.18)" stroke-width="2">
+          <!-- Row 1 -->
+          <path d="M -50 30 q 50 30 100 0 q -50 -20 -100 0 z"/>
+          <!-- Row 2 -->
+          <path d="M -60 75 q 60 35 120 0 q -60 -20 -120 0 z"/>
+          <!-- Row 3 -->
+          <path d="M -65 120 q 65 35 130 0 q -65 -20 -130 0 z"/>
+          <!-- Row 4 -->
+          <path d="M -55 165 q 55 35 110 0 q -55 -20 -110 0 z"/>
+          <!-- Row 5 -->
+          <path d="M -42 208 q 42 32 84 0 q -42 -18 -84 0 z"/>
+        </g>
+      </g>
+      <!-- Stem/top -->
+      <path d="M -10 25 q 10 -18 20 0 v 18 q -10 8 -20 0 z" fill="#6d452a" stroke="rgba(0,0,0,0.25)" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Oak leaf (yellow) on string 3 -->
+  <g transform="translate(1500, 780)" filter="url(#softShadow)">
+    <line class="string" x1="0" y1="0" x2="0" y2="60"/>
+    <g transform="translate(0, 60) scale(1.15)">
+      <path d="
+        M 0 -20
+        C 20 -40, 35 -65, 25 -90
+        C 55 -85, 75 -65, 85 -45
+        C 70 -30, 70 -10, 90 5
+        C 70 15, 65 30, 80 50
+        C 55 55, 45 70, 55 90
+        C 30 90, 15 105, 10 125
+        C 0 115, -10 115, -20 125
+        C -25 105, -40 90, -65 90
+        C -55 70, -65 55, -90 50
+        C -75 30, -80 15, -100 5
+        C -80 -10, -80 -30, -95 -45
+        C -85 -65, -65 -85, -35 -90
+        C -45 -65, -30 -40, 0 -20
+        z" fill="url(#gradOak)" class="outline"/>
+      <!-- Midrib and veins -->
+      <path class="vein" d="M 0 -10 L 0 125"/>
+      <path class="vein2" d="M 0 10 C 25 5, 40 0, 55 -10"/>
+      <path class="vein2" d="M 0 35 C 28 30, 45 22, 62 12"/>
+      <path class="vein2" d="M 0 60 C 26 58, 42 50, 58 42"/>
+      <path class="vein2" d="M 0 85 C -24 83, -40 75, -58 66"/>
+      <path class="vein2" d="M 0 35 C -26 30, -44 22, -60 12"/>
+      <path class="vein2" d="M 0 10 C -24 6, -40 2, -55 -10"/>
+    </g>
+  </g>
+
+  <!-- Pine cone on string 4 -->
+  <g transform="translate(2100, 760)" filter="url(#softShadow)">
+    <line class="string" x1="0" y1="0" x2="0" y2="70"/>
+    <g transform="translate(0, 70)">
+      <ellipse cx="0" cy="140" rx="80" ry="115" fill="url(#gradCone)" class="outline"/>
+      <g transform="translate(0, 45)" fill="url(#gradScale)" stroke="rgba(0,0,0,0.18)" stroke-width="2">
+        <path d="M -48 25 q 48 28 96 0 q -48 -18 -96 0 z"/>
+        <path d="M -58 68 q 58 32 116 0 q -58 -18 -116 0 z"/>
+        <path d="M -62 110 q 62 32 124 0 q -62 -18 -124 0 z"/>
+        <path d="M -52 150 q 52 30 104 0 q -52 -18 -104 0 z"/>
+        <path d="M -40 188 q 40 28 80 0 q -40 -16 -80 0 z"/>
+      </g>
+      <path d="M -10 22 q 10 -18 20 0 v 18 q -10 8 -20 0 z" fill="#6d452a" stroke="rgba(0,0,0,0.25)" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Birch leaf (orange) on string 5 -->
+  <g transform="translate(2700, 800)" filter="url(#softShadow)">
+    <line class="string" x1="0" y1="0" x2="0" y2="55"/>
+    <g transform="translate(0, 55) scale(1.2)">
+      <!-- Slightly serrated ovate birch leaf -->
+      <path d="
+        M 0 -20
+        C 25 -50, 60 -65, 90 -35
+        C 110 -10, 105 40, 70 85
+        C 45 115, 15 135, 0 145
+        C -15 135, -45 115, -70 85
+        C -105 40, -110 -10, -90 -35
+        C -60 -65, -25 -50, 0 -20
+        z" fill="url(#gradBirch)" class="outline"/>
+      <!-- Subtle serration impression -->
+      <path d="M 0 -20
+        C 25 -50, 60 -65, 90 -35
+        C 110 -10, 105 40, 70 85
+        C 45 115, 15 135, 0 145
+        C -15 135, -45 115, -70 85
+        C -105 40, -110 -10, -90 -35
+        C -60 -65, -25 -50, 0 -20
+        z" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="2" stroke-dasharray="4 6"/>
+      <!-- Midrib and veins -->
+      <path class="vein" d="M 0 -10 L 0 140"/>
+      <path class="vein2" d="M 0 20 C 28 15, 46 5, 62 -8"/>
+      <path class="vein2" d="M 0 45 C 28 40, 48 28, 66 14"/>
+      <path class="vein2" d="M 0 70 C -28 66, -48 54, -66 40"/>
+      <path class="vein2" d="M 0 95 C -26 92, -44 82, -60 70"/>
+    </g>
+  </g>
+</svg>
