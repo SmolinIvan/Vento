@@ -1,5 +1,5 @@
-import MenuItemUI, { Dish } from '@/ui/menuItemUI/menu-itemUI';
-import styles from './menu-list.module.css';
+import MenuItemUI, { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import styles from './MenuList.module.css';
 
 type MenuListProps = {
     dishes: Dish[]

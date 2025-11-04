@@ -1,0 +1,19 @@
+.main_menu_block {
+
+
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.menu_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 100px 0px 100px;
+}

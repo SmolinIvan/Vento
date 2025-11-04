@@ -1,15 +1,21 @@
-import styles from './menu-itemUI.module.css';
-export type Dish = {
-  name: string;
-  imageRef: string;
-  energy: DishEnergy;
-}
+import styles from './MenuItemUI.module.css';
+
+type DishType = 'breakfast' | 'dinner' | 'deserts' | 'soups' | 'pasta';
+
 type DishEnergy = {
   kcal: number;
   protein: number;
   fat: number;
   carbs: number;
 }
+export type Dish = {
+  name: string;
+  imageRef: string;
+  energy: DishEnergy;
+  type: DishType;
+}
+
+
 
 type MenuItemUIProps = {
   dish: Dish;

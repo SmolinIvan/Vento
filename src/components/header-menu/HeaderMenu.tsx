@@ -1,5 +1,5 @@
-import ButtonUI from '@/shared/ui/buttonUI/buttonUI';
-import styles from './header-menu.module.css';
+import ButtonUI from '@/shared/ui/ButtonUI/ButtonUI';
+import styles from './HeaderMenu.module.css';
 const HeaderMenu: React.FC = () => {
     return (
         <div className={styles.container}>

@@ -1,0 +1,49 @@
+.dish_filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter_button {
+  border: none;
+  /* border-radius: 5px; */
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  background-color: transparent;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.list_item:not(:last-of-type) {
+  border-right: 1px solid black;
+}
+
+.list_item:last-of-type {
+  border-top-right-radius: 10px;
+  border-right: 1px solid black;
+  border-bottom-right-radius: 10px;
+}
+
+.list_item:first-of-type {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: 1px solid black;
+}
+
+.list_item {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: #f5e9bf ;
+}
+
+.list_item_active {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: #f090c3 ;
+}
