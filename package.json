@@ -8,6 +8,7 @@
         "build": "webpack --mode production",
         "deploy": "npm run build && gh-pages -d dist",
         "dev": "webpack serve --mode development --open",
+        "lint": "eslint src --ext .ts,.tsx",
         "predeploy": "npm run build"
     },
     "homepage": "https://smolinivan.github.io/Vento",

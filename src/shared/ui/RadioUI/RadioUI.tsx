@@ -5,12 +5,12 @@ type RadioButtonUIProps = {
 }
 
 const RadioButton = ({ onChange, text }: RadioButtonUIProps) => {
-  return (
-    <label>
-      <button onClick={onChange}>
-        {text}
-      </button>
-    </label>
-  );
+    return (
+        <label>
+            <button onClick={onChange}>
+                {text}
+            </button>
+        </label>
+    );
 };
 export default RadioButton;

@@ -7,7 +7,7 @@ import HeaderMenu from '@/components/header-menu/HeaderMenu';
 
 export const LandingPage: React.FC = () => {
     return (
-        <>
+        <div>
             <HeaderMenu />
             <img src={logoCatCloud} alt="Венюша" className={styles.logo} />
             <img src={logoVento} alt="Vento" className={styles.logo_text} />
@@ -15,6 +15,6 @@ export const LandingPage: React.FC = () => {
                 <h1 className={styles.title}>мы открылись !</h1>
                 <img className={styles.image} src={crossainsImage} alt="Croissants" />
             </div>
-        </>
+        </div>
     );
 };

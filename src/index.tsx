@@ -11,7 +11,7 @@ root.render(
     <React.StrictMode>
         {/* Для деплоя basename='/Vento'
         надо разобратсья как поменять*/}
-        <BrowserRouter basename='/Vento'>
+        <BrowserRouter basename='/'>
             <AppProvider>
                 <App />
             </AppProvider>

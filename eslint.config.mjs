@@ -25,13 +25,15 @@ export default defineConfig(
         rules: {
             // Правила для точек с запятой
             semi: ['error', 'always'], // Требует точки с запятой
-
+            indent: ['error', 4], // Использование 4 пробелов для отступов - temporarily disabled due to RangeError
             // Правила для пробелов в конце строки
             'eol-last': ['error', 'always'], // Требует пробел в конце файла
             'no-trailing-spaces': 'error', // Запрещает пробелы в конце строк
             // Дополнительные полезные правила для форматирования
             quotes: ['error', 'single'], // Одинарные кавычки
             'comma-dangle': ['error', 'always-multiline'], // Висящие запятые
+            // Правило для отступов (4 пробела)
+
         },
     },
     // Конфигурация для JavaScript файлов (без type checking)
