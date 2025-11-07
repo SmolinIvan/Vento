@@ -19,13 +19,13 @@ export type Dish = {
 
 type MenuItemUIProps = {
   dish: Dish;
-  onClick?: () => void;
+  onClick: (dish:Dish) => void;
 }
 
 
 const MenuItemUI = ({ dish, onClick }: MenuItemUIProps) => {
     return (
-        <div className={styles.menu_item} onClick={onClick}>
+        <div className={styles.menu_item} onClick={() => onClick(dish)}>
             <h3>{dish.name}</h3>
             <img className={styles.menu_item_img} src={dish.imageRef} alt={dish.name} />
             <div className={styles.menu_item_info}>

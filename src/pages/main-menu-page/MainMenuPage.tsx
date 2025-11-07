@@ -4,11 +4,13 @@ import MenuList from '@/components/menu-list/MenuList';
 import { DISHES } from '@/mockData/menuItems';
 import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
 import { AppContext } from '@/context/AppContext';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import DishFilter from '@/components/dish-filter/DishFilter';
+import ModalUI from '@/shared/ui/ModalUI/ModalUI';
 
 export const MainMenuPage: React.FC = () => {
     const { dishes, activeFilter,filteredDishes,filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(AppContext);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         setDishes(DISHES);
@@ -27,6 +29,15 @@ export const MainMenuPage: React.FC = () => {
         setActiveFilter(dishType);
     };
 
+    const handleOpenModal = (toSee:Dish) => {
+        console.log(toSee);
+        setIsOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsOpen(false);
+    };
+
     return (
         <div className={styles.main_menu_block}>
             <ButtonUI type="link" to="/" >
@@ -35,8 +46,11 @@ export const MainMenuPage: React.FC = () => {
             <h1 className={styles.title}>Main Menu Page</h1>
             <div className={styles.menu_block}>
                 <DishFilter dishTypes={dishFilterNames} onClick={handleFilterDishes} activeFilter={activeFilter}/>
-                <MenuList dishes={filteredDishes} onClick={()=> {}} />
+                <MenuList dishes={filteredDishes} onClick={handleOpenModal} />
             </div>
+            <ModalUI isOpen={isOpen} onClose={handleCloseModal}>
+                <h1>Modal</h1>
+            </ModalUI>
         </div>
     );
 };
