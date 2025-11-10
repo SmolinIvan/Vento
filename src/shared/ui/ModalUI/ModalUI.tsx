@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import ButtonUI from '../ButtonUI/ButtonUI';
+import ButtonUI from '../buttonUI/ButtonUI';
 import styles from './ModalUI.module.css';
 
 type ModalUIProps = {

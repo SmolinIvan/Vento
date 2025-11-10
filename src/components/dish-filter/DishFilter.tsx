@@ -1,6 +1,6 @@
-import ButtonUI from '@/shared/ui/ButtonUI/ButtonUI';
+import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
 import styles from './DishFilter.module.css';
-import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { MenuContext } from '@/context/MenuContext';
 import { useContext } from 'react';
 type DishFilterProps = {

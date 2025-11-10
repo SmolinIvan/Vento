@@ -1,6 +1,6 @@
-import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { FC } from 'react';
-import ButtonUI from '../ButtonUI/ButtonUI';
+import ButtonUI from '../buttonUI/ButtonUI';
 import styles from './DishInfoUI.module.css';
 
 type DishInfoUIProps = {

@@ -1,4 +1,4 @@
-import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { createContext, FC, PropsWithChildren, useState } from 'react';
 
 type MenuContextState = {

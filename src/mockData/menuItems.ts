@@ -1,4 +1,4 @@
-import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import transparentCros from '@/assets/svg/croissant.svg';
 import borsch from '@/assets/images/dishes/borsch.png';
 

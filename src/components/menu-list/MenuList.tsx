@@ -1,4 +1,4 @@
-import MenuItemUI, { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import MenuItemUI, { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import styles from './MenuList.module.css';
 import { MenuContext } from '@/context/MenuContext';
 import { useContext } from 'react';

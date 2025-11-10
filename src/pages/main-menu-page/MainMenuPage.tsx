@@ -1,8 +1,8 @@
 import styles from './MainMenuPage.module.css';
-import ButtonUI from '@/shared/ui/ButtonUI/ButtonUI';
+import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
 import MenuList from '@/components/menu-list/MenuList';
 import { DISHES } from '@/mockData/menuItems';
-import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { MenuContext } from '@/context/MenuContext';
 import { useContext, useEffect, useState } from 'react';
 import DishFilter from '@/components/dish-filter/DishFilter';

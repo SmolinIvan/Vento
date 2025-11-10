@@ -1,4 +1,4 @@
-import ButtonUI from '@/shared/ui/ButtonUI/ButtonUI';
+import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
 import styles from './HeaderMenu.module.css';
 const HeaderMenu: React.FC = () => {
     return (

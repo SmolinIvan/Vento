@@ -1,4 +1,4 @@
-import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
+import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import styles from './BasketItemUI.module.css';
 
 type BasketItemUIProps = {
