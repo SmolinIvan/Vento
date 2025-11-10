@@ -15,7 +15,7 @@ const ModalUI:FC<ModalUIProps> = ({ isOpen, onClose , children }) => {
 
     return (
         <div className={styles.main}>
-            <ButtonUI onClick={() => onClose(false)} type={'button'}>Закрыть</ButtonUI>
+            <ButtonUI onClick={() => onClose(false)} type={'button'} className={styles.close}>X</ButtonUI>
             {children}
         </div>
     );

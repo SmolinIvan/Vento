@@ -1,0 +1,18 @@
+.dish_info {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.shop_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: inherit;
+}
+
+.shop_button {
+  font-family: inherit;
+  font-size: 1rem;
+}

@@ -1,8 +1,8 @@
 .menu_item {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   width: 320px;
   height: 450px;
   /* border: 2px solid rgb(255, 255, 255); */
@@ -14,13 +14,32 @@
   background-size: cover;
 }
 
+.menu_item_name {
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
 .menu_item_img {
+  display: flex;
+  justify-self: center;
   width: 100%;
   max-width: 125px;
   height: 100%;
-  max-height: 125px;;
-  border: 2px solid black;
-  border-radius: 25px;
+  max-height: 125px;
+  margin-top: 100px;
+  /* border: 2px solid black;
+  border-radius: 25px; */
+}
+
+.menu_item_price {
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .menu_item_info {

@@ -1,6 +1,6 @@
 .main_menu_block {
-
-
+  min-height: 100vh;
+  background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
 }
 
 .title {

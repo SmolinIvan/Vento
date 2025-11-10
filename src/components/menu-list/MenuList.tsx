@@ -1,16 +1,20 @@
 import MenuItemUI, { Dish } from '@/ui/menu-itemUI/MenuItemUI';
 import styles from './MenuList.module.css';
+import { MenuContext } from '@/context/MenuContext';
+import { useContext } from 'react';
 
 type MenuListProps = {
-    dishes: Dish[]
     onClick: (dish: Dish) => void;
 
 };
-const MenuList = ({dishes, onClick}: MenuListProps) => {
+const MenuList = ({onClick}: MenuListProps) => {
+
+    const {filteredDishes} = useContext(MenuContext);
+
     return (
         <div className={styles.menu_list}>
-            {dishes.map((dish) => (
-                <MenuItemUI dish={dish} onClick={() => onClick(dish)} />
+            {filteredDishes.map((filteredDish) => (
+                <MenuItemUI dish={filteredDish} onClick={() => onClick(filteredDish)} />
             ))}
         </div>
     );

@@ -3,54 +3,70 @@ import ButtonUI from '@/shared/ui/ButtonUI/ButtonUI';
 import MenuList from '@/components/menu-list/MenuList';
 import { DISHES } from '@/mockData/menuItems';
 import { Dish } from '@/ui/menu-itemUI/MenuItemUI';
-import { AppContext } from '@/context/AppContext';
+import { MenuContext } from '@/context/MenuContext';
 import { useContext, useEffect, useState } from 'react';
 import DishFilter from '@/components/dish-filter/DishFilter';
 import ModalUI from '@/shared/ui/ModalUI/ModalUI';
+import DishInfo from '@/components/dish-info/DishInfo';
+import Basket from '@/components/basket/basket';
 
 export const MainMenuPage: React.FC = () => {
-    const { dishes, activeFilter,filteredDishes,filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(AppContext);
+    const { dishes, activeFilter,filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenBasketModal, setIsOpenBasketModal] = useState(false);
+    const [currentDish, setCurrentDish] = useState<Dish | null>(null);
 
     useEffect(() => {
         setDishes(DISHES);
         setFilteredDishes(DISHES);
     }, []);
 
-    const dishFilterNames:string[] = dishes.reduce((acc:string[], dish:Dish) => {
-        if (!acc.includes(dish.type)) {
-            acc.push(dish.type);
-        }
-        return acc;
-    }, ['all']);
-
     const handleFilterDishes = (dishType:string) => {
         filterDishes(dishType, dishes);
         setActiveFilter(dishType);
     };
 
-    const handleOpenModal = (toSee:Dish) => {
-        console.log(toSee);
+    const handleOpenDishModal = (currentDish:Dish) => {
+        setCurrentDish(currentDish);
         setIsOpen(true);
     };
 
-    const handleCloseModal = () => {
+    const handleCloseDishModal = () => {
         setIsOpen(false);
     };
+
+    const handleOpenBaskethModal = () => {
+        setIsOpenBasketModal(true);
+        setIsOpen(false);
+    };
+
+    const handleCloseBasketModal = () => {
+        setIsOpenBasketModal(false);
+    };
+
+
 
     return (
         <div className={styles.main_menu_block}>
             <ButtonUI type="link" to="/" >
                 <span>Меню</span>
             </ButtonUI>
+            <ButtonUI type="button" onClick={handleOpenBaskethModal} >
+                <span>Меню</span>
+            </ButtonUI>
             <h1 className={styles.title}>Main Menu Page</h1>
             <div className={styles.menu_block}>
-                <DishFilter dishTypes={dishFilterNames} onClick={handleFilterDishes} activeFilter={activeFilter}/>
-                <MenuList dishes={filteredDishes} onClick={handleOpenModal} />
+                <DishFilter onClick={handleFilterDishes} activeFilter={activeFilter}/>
+                <MenuList onClick={handleOpenDishModal} />
             </div>
-            <ModalUI isOpen={isOpen} onClose={handleCloseModal}>
-                <h1>Modal</h1>
+            <ModalUI isOpen={isOpen} onClose={handleCloseDishModal}>
+                {currentDish && <DishInfo dish={currentDish} />}
             </ModalUI>
+
+            <ModalUI isOpen={isOpenBasketModal} onClose={handleCloseBasketModal}>
+                {currentDish && <Basket />}
+            </ModalUI>
+
         </div>
     );
 };
