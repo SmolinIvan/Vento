@@ -44,8 +44,6 @@ export const MainMenuPage: React.FC = () => {
         setIsOpenBasketModal(false);
     };
 
-
-
     return (
         <div className={styles.main_menu_block}>
             <ButtonUI type="link" to="/" >
