@@ -1,5 +1,7 @@
 .basket_item_info {
   display: flex;
-  flex-direction: row;
-  justify-content:space-between;
+  align-items: center; /* Выравнивание по вертикали */
+  justify-content: space-between;
+  height: 30px;
+
 }

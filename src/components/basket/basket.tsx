@@ -4,9 +4,9 @@ import BasketUI from '@/shared/ui/basketUI/BasketUI';
 
 const Basket = () => {
 
-    const {addedDishes, removeDish} = useContext(BasketContext);
+    const {addedDishes, addDish,removeDish} = useContext(BasketContext);
     return (
-        <BasketUI dishes={addedDishes} onRemove={removeDish} />
+        <BasketUI dishes={addedDishes} onAdd={addDish} onRemove={removeDish} />
     );
 };
 

@@ -3,3 +3,12 @@
     /* min-width: 200px;
     min-height: 200px; */
 }
+
+.basket_list {
+    list-style: none;
+    padding: 0;
+}
+.basket_item {
+    list-style: none;
+    /* height: 10px; */
+}

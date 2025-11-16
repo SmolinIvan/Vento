@@ -1,11 +1,4 @@
-.counting {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.button {
+.button_defaulf {
     background: linear-gradient(135deg, #ffb6c1, #fffacd);
     border: 2px solid #f5deb3;
     border-radius: 25px;

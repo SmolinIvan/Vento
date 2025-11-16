@@ -15,15 +15,15 @@ export const CountingUI = ({ currentDish, basketDish, onAdd, onRemove }: Countin
         <div className={styles.counting}>
             {basketDish === undefined ? (
                 // Показываем только кнопку "Добавить", если блюда нет в корзине
-                <ButtonUI type="button" onClick={() => onAdd(currentDish)}>
+                <ButtonUI className={styles.button} type="button" onClick={() => onAdd(currentDish)}>
                     Добавить в корзину
                 </ButtonUI>
             ) : (
                 // Показываем кнопки управления количеством, если блюдо в корзине
                 <>
-                    <button onClick={() => onRemove(currentDish.id)}>-</button>
+                    <ButtonUI className={styles.button} type="button" onClick={() => onRemove(currentDish.id)}>-</ButtonUI>
                     <span>{basketDish.count}</span>
-                    <button onClick={() => onAdd(currentDish)}>+</button>
+                    <ButtonUI className={styles.button} type="button" onClick={() => onAdd(currentDish)}>+</ButtonUI>
                 </>
             )}
         </div>
