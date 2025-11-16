@@ -1,5 +1,5 @@
 import styles from './MainMenuPage.module.css';
-import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
+// import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
 import MenuList from '@/components/menu-list/MenuList';
 import { DISHES } from '@/mockData/menuItems';
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
@@ -8,7 +8,9 @@ import { useContext, useEffect, useState } from 'react';
 import DishFilter from '@/components/dish-filter/DishFilter';
 import ModalUI from '@/shared/ui/ModalUI/ModalUI';
 import DishInfo from '@/components/dish-info/DishInfo';
-import Basket from '@/components/basket/basket';
+
+import HeaderMenu from '@/components/header-menu/HeaderMenu';
+import Basket from '@/components/basket/Basket';
 
 export const MainMenuPage: React.FC = () => {
     const { dishes, activeFilter,filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
@@ -46,23 +48,18 @@ export const MainMenuPage: React.FC = () => {
 
     return (
         <div className={styles.main_menu_block}>
-            <ButtonUI type="link" to="/" >
-                <span>Меню</span>
-            </ButtonUI>
-            <ButtonUI type="button" onClick={handleOpenBaskethModal} >
-                <span>Меню</span>
-            </ButtonUI>
+            <HeaderMenu onOpenBasket={handleOpenBaskethModal} />
             <h1 className={styles.title}>Main Menu Page</h1>
             <div className={styles.menu_block}>
                 <DishFilter onClick={handleFilterDishes} activeFilter={activeFilter}/>
                 <MenuList onClick={handleOpenDishModal} />
             </div>
             <ModalUI isOpen={isOpen} onClose={handleCloseDishModal}>
-                {currentDish && <DishInfo dish={currentDish} />}
+                {currentDish && <DishInfo currentDish={currentDish}/>}
             </ModalUI>
 
             <ModalUI isOpen={isOpenBasketModal} onClose={handleCloseBasketModal}>
-                {currentDish && <Basket />}
+                <Basket />
             </ModalUI>
 
         </div>

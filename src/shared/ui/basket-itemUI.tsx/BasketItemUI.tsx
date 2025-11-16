@@ -1,8 +1,8 @@
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import styles from './BasketItemUI.module.css';
+import { BasketDish } from '@/context/BasketContext';
 
 type BasketItemUIProps = {
-  dish: Dish;
+  dish: BasketDish;
   onRemove: (id: number) => void;
 }
 
@@ -12,6 +12,7 @@ const BasketItemUI = ({ dish, onRemove }: BasketItemUIProps) => {
             <p>{dish.name}</p>
             <p>{dish.price}</p>
             <button onClick={() => onRemove(dish.id)}>Убрать из корзины</button>
+            <p>{dish.count}</p>
         </div>
     );
 };

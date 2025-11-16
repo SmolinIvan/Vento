@@ -1,12 +1,17 @@
 import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
 import styles from './HeaderMenu.module.css';
-const HeaderMenu: React.FC = () => {
+import { FC } from 'react';
+
+type BasketProps = {
+    onOpenBasket: () => void;
+};
+const HeaderMenu: FC<BasketProps> = ({onOpenBasket}: BasketProps) => {
     return (
         <div className={styles.container}>
             <ButtonUI type="link" to="/main" className={styles.button}>
                 <span className={styles.text}>Меню</span>
             </ButtonUI>
-            <ButtonUI type="link" to="/" className={styles.button}>
+            <ButtonUI type="button" className={styles.button} onClick={onOpenBasket}>
                 <span className={styles.text}>Корзина</span>
             </ButtonUI>
         </div>

@@ -2,9 +2,9 @@ import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import transparentCros from '@/assets/svg/croissant.svg';
 import borsch from '@/assets/images/dishes/borsch.png';
 
-export type DishWithCategory = Dish;
+// export type DishWithCategory = Dish;
 
-export const DISHES: DishWithCategory[] = [
+export const DISHES: Dish[] = [
     {
         id: 1,
         name: 'Паста арабьята',

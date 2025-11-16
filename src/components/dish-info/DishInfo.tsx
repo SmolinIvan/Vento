@@ -5,14 +5,16 @@ import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { useContext } from 'react';
 
 type DissInfoProps = {
-  dish: Dish;
+  currentDish: Dish;
 };
 
-const DishInfo = ({ dish }: DissInfoProps) => {
+const DishInfo = ({ currentDish }: DissInfoProps) => {
     const {addDish, removeDish} = useContext(BasketContext);
+    const {addedDishes} = useContext(BasketContext);
+    const addedDish = addedDishes.find((dish) => dish.id === currentDish.id);
 
     return (
-        <DishInfoUI dish={dish} onAdd={addDish} onRemove={removeDish}/>
+        <DishInfoUI currentDish={currentDish} basketDish={addedDish} onAdd={addDish} onRemove={removeDish}/>
     );
 };
 

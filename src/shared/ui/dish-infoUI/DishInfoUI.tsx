@@ -1,24 +1,25 @@
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { FC } from 'react';
-import ButtonUI from '../buttonUI/ButtonUI';
 import styles from './DishInfoUI.module.css';
+import { CountingUI } from '../countingUI/CountingUI';
+import { BasketDish } from '@/context/BasketContext';
 
 type DishInfoUIProps = {
-  dish: Dish;
+  currentDish: Dish;
+  basketDish: BasketDish | undefined;
   onAdd: (dish: Dish) => void;
   onRemove: (id: number) => void;
 };
 
-const DishInfoUI:FC<DishInfoUIProps> = ({ dish, onAdd, onRemove }) => {
+const DishInfoUI:FC<DishInfoUIProps> = ({ currentDish, basketDish, onAdd, onRemove }) => {
     return (
         <div className={styles.dish_info}>
             {/* <img src={dish?.imageRef} alt={dish?.name} /> */}
-            <h2>{dish.name}</h2>
-            <p>{dish.description}</p>
-            <p>{dish.price} рублей</p>
+            <h2>{currentDish.name}</h2>
+            <p>{currentDish.description}</p>
+            <p>{currentDish.price} рублей</p>
             <div className={styles.shop_buttons}>
-                <ButtonUI className={styles.shop_button} onClick={() => onAdd(dish)} type='button'>Добавить в корзину</ButtonUI>
-                <ButtonUI className={styles.shop_button} onClick={() => onRemove(dish.id)} type='button'>Убрать из корзины</ButtonUI>
+                <CountingUI currentDish={currentDish} basketDish={basketDish} onAdd={onAdd} onRemove={onRemove} />
             </div>
         </div>
     );
