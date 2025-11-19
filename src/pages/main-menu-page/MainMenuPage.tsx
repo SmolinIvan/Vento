@@ -12,6 +12,7 @@ import DishInfo from '@/components/dish-info/DishInfo';
 import HeaderMenu from '@/components/header-menu/HeaderMenu';
 import Basket from '@/components/basket/Basket';
 
+
 export const MainMenuPage: React.FC = () => {
     const { dishes, activeFilter,filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
     const [isOpen, setIsOpen] = useState(false);
