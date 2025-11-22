@@ -5,9 +5,11 @@
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  max-width: 30vw;
+  min-width: 270px;
   border-radius: var(--border-radius-xl);
-  box-shadow: var(--shadow-lg);
+  border: 1px solid black;
+  box-shadow: var(--shadow-xl);
   padding: 10px;
   background: var(--bg-secondary);
   transform: translate(-50%, -50%);
@@ -15,8 +17,14 @@
 
 .close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5%;
+  right: 5%;
   border: none;
   background-color: transparent;
+}
+
+.close:hover {
+  cursor: pointer;
+  border-radius: var(--border-radius-xl);
+  background-color: var(--bg-accent);
 }

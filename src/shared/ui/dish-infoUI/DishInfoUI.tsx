@@ -16,8 +16,14 @@ const DishInfoUI:FC<DishInfoUIProps> = ({ currentDish, basketDish, onAdd, onRemo
         <div className={styles.dish_info}>
             {/* <img src={dish?.imageRef} alt={dish?.name} /> */}
             <h2>{currentDish.name}</h2>
-            <p>{currentDish.description}</p>
-            <p>{currentDish.price} рублей</p>
+            <p className={styles.dish_description}>{currentDish.description}</p>
+            <div className={styles.dish_macros}>
+                <span className={styles.dish_macro}>{currentDish.energy.protein} белков</span>
+                <span className={styles.dish_macro}>{currentDish.energy.fat} жиров</span>
+                <span className={styles.dish_macro}>{currentDish.energy.carbs} углеводов</span>
+                <span className={styles.dish_macro}>{currentDish.energy.kcal} ккал</span>
+            </div>
+            <p className={styles.dish_price}>{currentDish.price} рублей</p>
             <div className={styles.shop_buttons}>
                 <CountingUI currentDish={currentDish} basketDish={basketDish} onAdd={onAdd} onRemove={onRemove} />
             </div>

@@ -2,4 +2,11 @@
     background: var(--bg-secondary);
     border: 2px solid #f5deb3;
     border-radius: var(--border-radius-xl);
+    font-family: inherit;
+}
+
+.button_defaulf:hover {
+    background: var(--bg-secondary);
+    border: 2px solid #f5deb3;
+    border-radius: var(--border-radius-xl);
 }

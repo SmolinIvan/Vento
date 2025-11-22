@@ -38,3 +38,7 @@ h3 {
   margin: 0;
   font-size: var(--font-size-xl);
 }
+
+button {
+  border: none;
+}

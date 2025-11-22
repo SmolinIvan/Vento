@@ -1,6 +1,17 @@
 .dish_info {
   display: flex;
   flex-direction: column;
+  padding:15px;
+  gap:25px;
+}
+
+.dish_description {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-align: justify;
+  padding: 10px;
+  border-radius: var(--border-radius-xl);
+  background: var(--bg-accent);
 }
 
 .shop_buttons {
@@ -9,6 +20,29 @@
   justify-content: space-around;
   align-items: center;
   font-family: inherit;
+}
+
+.dish_macros {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dish_macro{
+  border-radius: var(--border-radius-xl);
+  background: var(--bg-accent);
+  padding: 0px 8px 0px 8px;
+}
+
+.dish_price {
+  border-radius: var(--border-radius-xl);
+  background: var(--bg-accent);
+  padding: 0px 8px 0px 8px;
+  width: 150px;
+  align-self: center;
+  text-align: center;
 }
 
 .shop_button {
