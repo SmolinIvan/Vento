@@ -1,13 +1,11 @@
 .main_menu_block {
   min-height: 100vh;
-  background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
 }
 
 .title {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 2rem;
 }
 
 .menu_block {

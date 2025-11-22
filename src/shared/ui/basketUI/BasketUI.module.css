@@ -1,7 +1,7 @@
 .basket {
     display: block;
-    /* min-width: 200px;
-    min-height: 200px; */
+    min-width: 200px;
+    min-height: 200px;
 }
 
 .basket_list {

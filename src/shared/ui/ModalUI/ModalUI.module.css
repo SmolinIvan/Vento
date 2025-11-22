@@ -6,11 +6,10 @@
   display: flex;
   flex-direction: column;
   max-width: 300px;
- /* max-height: 300px;  */
-  border: 5px solid #f598a8;
-  border-radius: 10px;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
   padding: 10px;
-  background: linear-gradient(90deg, #f598a8, #f6edb2);
+  background: var(--bg-secondary);
   transform: translate(-50%, -50%);
 }
 

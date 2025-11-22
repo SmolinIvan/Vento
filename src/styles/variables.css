@@ -1,0 +1,179 @@
+/* ===== ОСНОВНЫЕ ПЕРЕМЕННЫЕ, как пример ===== */ 
+:root {
+  /* Шрифты */
+  --font-family-primary: 'Caveat';
+  --font-family-heading: 'Georgia', 'Times New Roman', serif;
+  
+  /* Размеры шрифтов */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  
+  /* Межстрочный интервал */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Отступы */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+  
+  /* Скругления */
+  --border-radius-xl: 16px;
+ 
+  /* Тени */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  
+  /* Анимации */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.9s ease;
+  
+  /* Z-index уровни */
+  --z-popover: 1050;
+  --z-tooltip: 1060;
+
+  /* Фоны */
+  --bg-primary: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+  --bg-secondary: linear-gradient(135deg, #ffb6c1, #fffacd);  
+  --accent-hover:rgb(253, 230, 202, 0.3);
+}
+
+
+
+/* ===== СВЕТЛАЯ ТЕМА (НЕЖНО-РОЗОВАЯ) ===== */
+[data-theme="light"] {
+  /* Основные цвета */
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  
+  /* Фоны */
+  --bg-primary: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);         /* Очень светлый розовый */
+  --bg-secondary: #fce8ec;        /* Светлый розовый */
+  --bg-tertiary: #f9d6e0;         /* Средний розовый */
+  --bg-card: #ffffff;             /* Белый для карточек */
+  --bg-overlay: rgba(255, 245, 247, 0.9);
+  
+  /* Текст */
+  --text-primary: #2d3748;        /* Темно-серый */
+  --text-secondary: #4a5568;      /* Серый */
+  --text-tertiary: #718096;       /* Светло-серый */
+  --text-inverted: #ffffff;       /* Белый для темного фона */
+  --text-accent: #b83280;         /* Акцентный розовый */
+  
+  /* Акцентные цвета */
+  --accent-primary: #d53f8c;      /* Основной розовый */
+  --accent-secondary: #b83280;    /* Темный розовый */
+  --accent-hover: #c53078;        /* Розовый при наведении */
+  --accent-active: #a4226f;       /* Розовый при нажатии */
+  
+  /* Границы */
+  --border-primary: #ecc3d0;      /* Светлый розовый */
+  --border-secondary: #d69ab0;    /* Средний розовый */
+  --border-accent: #b83280;       /* Темно-розовый (для кнопок и модалок) */
+  --border-focus: #d53f8c;        /* Розовый для фокуса */
+  
+  /* Состояния */
+  --success-color: #38a169;
+  --warning-color: #d69e2e;
+  --error-color: #e53e3e;
+  --info-color: #3182ce;
+  
+  /* Тени */
+  --shadow-color: rgba(214, 63, 140, 0.1);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 6px var(--shadow-color);
+  --shadow-lg: 0 10px 15px var(--shadow-color);
+}
+
+/* ===== ТЕМНАЯ ТЕМА (РОЗОВЫЕ АКЦЕНТЫ) ===== */
+[data-theme="dark"] {
+  /* Основные цвета */
+  --color-white: #ffffff;
+  --color-black: #0f0f0f;
+  
+  /* Фоны */
+  --bg-primary: #1a0f14;          /* Темный фиолетово-розовый */
+  --bg-secondary: #25171e;        /* Темный розовый */
+  --bg-tertiary: #301f28;         /* Средний темный розовый */
+  --bg-card: #2d1b25;             /* Карточки */
+  --bg-overlay: rgba(26, 15, 20, 0.9);
+  
+  /* Текст */
+  --text-primary: #f7fafc;        /* Очень светлый */
+  --text-secondary: #e2e8f0;      /* Светлый */
+  --text-tertiary: #cbd5e0;       /* Средний */
+  --text-inverted: #1a0f14;       /* Темный для светлого фона */
+  --text-accent: #f687b3;         /* Светлый розовый */
+  
+  /* Акцентные цвета */
+  --accent-primary: #ed64a6;      /* Яркий розовый */
+  --accent-secondary: #d53f8c;    /* Розовый */
+  --accent-hover: #f687b3;        /* Светлый розовый при наведении */
+  --accent-active: #c53078;       /* Темный розовый при нажатии */
+  
+  /* Границы */
+  --border-primary: #3d2835;      /* Темный розовый */
+  --border-secondary: #4d3342;    /* Средний темный розовый */
+  --border-accent: #d53f8c;       /* Розовый (для кнопок и модалок) */
+  --border-focus: #ed64a6;        /* Яркий розовый для фокуса */
+  
+  /* Состояния */
+  --success-color: #48bb78;
+  --warning-color: #ecc94b;
+  --error-color: #f56565;
+  --info-color: #4299e1;
+  
+  /* Тени */
+  --shadow-color: rgba(237, 100, 166, 0.15);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 6px var(--shadow-color);
+  --shadow-lg: 0 10px 15px var(--shadow-color);
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Утилитарные классы для быстрого использования */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-card { background-color: var(--bg-card); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-accent { color: var(--text-accent); }
+
+.border-accent { border-color: var(--border-accent); }
+.border-primary { border-color: var(--border-primary); }
+
+/* Скрыть scrollbar для Webkit браузеров */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: var(--border-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-accent);
+}

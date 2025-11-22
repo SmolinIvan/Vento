@@ -8,7 +8,7 @@ type DishFilterProps = {
   activeFilter: string;
 }
 
-const DishFilter = ({ onClick, activeFilter }: DishFilterProps) => {
+export const DishFilter = ({ onClick, activeFilter }: DishFilterProps) => {
 
     const {dishes} = useContext(MenuContext);
 
@@ -33,4 +33,3 @@ const DishFilter = ({ onClick, activeFilter }: DishFilterProps) => {
         </div>
     );
 };
-export default DishFilter;

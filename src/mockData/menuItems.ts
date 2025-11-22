@@ -1,6 +1,5 @@
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
-import transparentCros from '@/assets/svg/croissant.svg';
-import borsch from '@/assets/images/dishes/borsch.png';
+import burgerSVG from '@/assets/svg/burger.svg';
 
 // export type DishWithCategory = Dish;
 
@@ -8,7 +7,7 @@ export const DISHES: Dish[] = [
     {
         id: 1,
         name: 'Паста арабьята',
-        imageRef: transparentCros,
+        imageRef: burgerSVG,
         type: 'pasta',
         energy: {
             kcal: 0,
@@ -22,7 +21,7 @@ export const DISHES: Dish[] = [
     {
         id: 2,
         name: 'Рамен',
-        imageRef: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Beef_ramen_-_Sun_Noodle%2C_Kailua%2C_Oahu.jpg',
+        imageRef: burgerSVG,
         type: 'soups',
         energy: {
             kcal: 450,
@@ -36,7 +35,7 @@ export const DISHES: Dish[] = [
     {
         id: 3,
         name: 'Борщ',
-        imageRef: borsch,
+        imageRef: burgerSVG,
         type: 'soups',
         energy: {
             kcal: 150,
@@ -50,7 +49,7 @@ export const DISHES: Dish[] = [
     {
         id: 4,
         name: 'Цезарь',
-        imageRef: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Caesar_salad_%281%29.jpg/1280px-Caesar_salad_%281%29.jpg',
+        imageRef: burgerSVG,
         type: 'dinner',
         energy: {
             kcal: 350,
@@ -64,7 +63,7 @@ export const DISHES: Dish[] = [
     {
         id: 5,
         name: 'Пицца Маргарита',
-        imageRef: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/1280px-Eq_it-na_pizza-margherita_sep2005_sml.jpg',
+        imageRef: burgerSVG,
         type: 'dinner',
         energy: {
             kcal: 800,
@@ -78,7 +77,7 @@ export const DISHES: Dish[] = [
     {
         id: 6,
         name: 'Стейк',
-        imageRef: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Beef_fillet_steak_with_mushroom_sauce.jpg/1280px-Beef_fillet_steak_with_mushroom_sauce.jpg',
+        imageRef: burgerSVG,
         type: 'dinner',
         energy: {
             kcal: 600,
@@ -92,7 +91,7 @@ export const DISHES: Dish[] = [
     {
         id: 7,
         name: 'Бургер',
-        imageRef: 'https://w7.pngwing.com/pngs/487/480/png-transparent-hamburger-fast-food-french-fries-hamburger-junk-food-mcdonald-s-big-mac-junk-food-fast-food-french-fries-hamburger.png',
+        imageRef: burgerSVG,
         type: 'dinner',
         energy: {
             kcal: 750,
@@ -106,7 +105,7 @@ export const DISHES: Dish[] = [
     {
         id: 8,
         name: 'Тирамису',
-        imageRef: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tiramisu_with_blueberries_and_raspberries%2C_July_2011.jpg/1280px-Tiramisu_with_blueberries_and_raspberries%2C_July_2011.jpg',
+        imageRef: burgerSVG,
         type: 'deserts',
         energy: {
             kcal: 450,
@@ -120,7 +119,7 @@ export const DISHES: Dish[] = [
     {
         id: 9,
         name: 'Панна Котта',
-        imageRef: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Panna_cotta_ai_frutti_di_bosco.JPG/1280px-Panna_cotta_ai_frutti_di_bosco.JPG',
+        imageRef: burgerSVG,
         type: 'deserts',
         energy: {
             kcal: 320,
@@ -134,7 +133,7 @@ export const DISHES: Dish[] = [
     {
         id: 10,
         name: 'Сырники',
-        imageRef: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Syrniki_white_bg.jpg/1280px-Syrniki_white_bg.jpg',
+        imageRef: burgerSVG,
         type: 'breakfast',
         energy: {
             kcal: 280,

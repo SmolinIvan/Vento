@@ -1,7 +1,6 @@
 .dish_info {
   display: flex;
   flex-direction: column;
-
 }
 
 .shop_buttons {
@@ -14,5 +13,5 @@
 
 .shop_button {
   font-family: inherit;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }

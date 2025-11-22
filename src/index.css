@@ -1,3 +1,5 @@
+@import url('styles/variables.css');
+
 @font-face {
   font-family: 'Caveat';
   src: url('./assets/fonts/Caveat/Caveat.ttf');
@@ -6,12 +8,33 @@
 
 body {
   margin: 0;
-  font-family: 'Caveat', sans-serif;
-  background-color: rgba(217, 15, 42, 0.56);
+  font-family: var(--font-family-primary);
+  background: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   text-decoration: none;
+}
+
+
+p {
+  margin: 0;
+  font-size: var(--font-size-xl);
+}
+
+h1 {
+  margin: 0;
+  font-size: var(--font-size-3xl);
+}
+
+h2 {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+}
+
+h3 {
+  margin: 0;
+  font-size: var(--font-size-xl);
 }
