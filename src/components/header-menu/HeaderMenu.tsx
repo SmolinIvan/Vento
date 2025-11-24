@@ -1,19 +1,22 @@
 import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
 import styles from './HeaderMenu.module.css';
-import { FC } from 'react';
+import { Basket } from '../basket';
+import { PopUp } from '../popUp/PopUp';
 
-type BasketProps = {
-    onOpenBasket: () => void;
-};
-const HeaderMenu: FC<BasketProps> = ({onOpenBasket}: BasketProps) => {
+
+// type BasketProps = {
+//     onOpenBasket: () => void;
+// };
+const HeaderMenu = () => {
+
     return (
         <div className={styles.container}>
             <ButtonUI type="link" to="/main" className={styles.button}>
                 <span className={styles.text}>Меню</span>
             </ButtonUI>
-            <ButtonUI type="button" className={styles.button} onClick={onOpenBasket}>
-                <span className={styles.text}>Корзина</span>
-            </ButtonUI>
+            <PopUp buttonClassName={styles.button} buttonText='Корзина' >
+                <Basket />
+            </PopUp>
         </div>
     );
 };

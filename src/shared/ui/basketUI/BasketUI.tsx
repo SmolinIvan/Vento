@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import ButtonUI from '../buttonUI/ButtonUI';
-import BasketItemUI from '../basket-itemUI.tsx/BasketItemUI';
+import BasketItemUI from '../basket-itemUI/BasketItemUI';
 import styles from './BasketUI.module.css';
 import { BasketDish } from '@/context/BasketContext';
 import { Dish } from '../menu-itemUI/MenuItemUI';

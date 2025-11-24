@@ -20,6 +20,10 @@
     background-size: contain;
     background-color: transparent;
     border: none;
+    font-family: inherit;
+    font-size: 48px;
+    color: #E1FD2C9E;
+    font-weight: bold;
 }
 
 .text {
