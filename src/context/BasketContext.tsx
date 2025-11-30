@@ -1,3 +1,4 @@
+import { DISHES } from '@/mockData/menuItems';
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { createContext, FC, PropsWithChildren, useState } from 'react';
 
@@ -7,6 +8,7 @@ export type BasketDish = Dish &{
 
 type BasketContextState = {
   addedDishes: BasketDish[];
+  finalPrice: number;
   setAddedDishes: (dishes: BasketDish[]) => void;
   addDish: (dish: Dish) => void;
   removeDish: (id: number) => void;
@@ -14,7 +16,10 @@ type BasketContextState = {
 }
 
 const defaultContextState:BasketContextState = {
-    addedDishes: [],
+    addedDishes: [{...DISHES[0],
+        count: 1,
+    }, {...DISHES[1], count: 1 }, {...DISHES[2], count: 1 }],
+    finalPrice: 0,
     setAddedDishes: () => {},
     addDish: () => {},
     removeDish: () => {},
@@ -55,8 +60,12 @@ export const BasketProvider: FC<PropsWithChildren<object>> = ({ children }) => {
         console.log(dishesID);
     };
 
+    const finalPrice = addedDishes.reduce((acc:number, dish:BasketDish) => {
+        return acc + (dish.count * dish.price);
+    }, 0);
+
     return (
-        <BasketContext.Provider value={{ addedDishes, setAddedDishes, addDish, removeDish, payOrder }}>
+        <BasketContext.Provider value={{ addedDishes, finalPrice, setAddedDishes, addDish, removeDish, payOrder }}>
             {children}
         </BasketContext.Provider>
     );

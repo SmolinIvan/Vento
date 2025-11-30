@@ -7,10 +7,11 @@ import { Dish } from '../menu-itemUI/MenuItemUI';
 
 type BasketUIProps = {
     dishes: BasketDish[];
+    finalPrice: number;
     onAdd: (dish: Dish) => void;
     onRemove: (id: number) => void
 };
-const BasketUI:FC<BasketUIProps> =({dishes, onAdd, onRemove}: BasketUIProps) => {
+const BasketUI:FC<BasketUIProps> =({dishes, finalPrice, onAdd, onRemove}: BasketUIProps) => {
 
     return (
         <div className={styles.basket}>
@@ -23,11 +24,11 @@ const BasketUI:FC<BasketUIProps> =({dishes, onAdd, onRemove}: BasketUIProps) => 
                     </li>
                 ))}
             </ul>
-            < div className="basket-total">
+            < div>
                 {dishes.length > 0 &&
-                <div>
-                    <p>Сумма: {dishes.reduce((total, dish) => total + dish.price, 0)} рублей</p>
-                    <ButtonUI type='button' className={styles.button}>Оформить заказ</ButtonUI>
+                <div className={styles.basket_total}>
+                    <p>Сумма: {finalPrice} рублей</p>
+                    <ButtonUI type='button' className={styles.button_buy}>Оформить заказ</ButtonUI>
                 </div>
                 }
             </div>

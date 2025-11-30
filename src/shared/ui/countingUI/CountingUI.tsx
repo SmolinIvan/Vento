@@ -8,11 +8,12 @@ type CountingUIProps = {
     basketDish: BasketDish | undefined;
     onAdd: (currentDish: Dish) => void;
     onRemove: (id: number) => void;
+    className?: string;
 }
 
-export const CountingUI = ({ currentDish, basketDish, onAdd, onRemove }: CountingUIProps) => {
+export const CountingUI = ({ currentDish, basketDish, onAdd, onRemove, className=styles.counting }: CountingUIProps) => {
     return (
-        <div className={styles.counting}>
+        <div className={className}>
             {basketDish === undefined ? (
                 // Показываем только кнопку "Добавить", если блюда нет в корзине
                 <ButtonUI className={styles.button} type="button" onClick={() => onAdd(currentDish)}>
