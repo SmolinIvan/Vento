@@ -1,6 +1,5 @@
 import { BasketContext } from '@/context/BasketContext';
-
-import DishInfoUI from '@/shared/ui/dish-infoUI/DishInfoUI';
+import { DishInfoUI } from '@/shared/ui';
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { useContext } from 'react';
 

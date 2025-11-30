@@ -1,4 +1,5 @@
-import { LandingPage, MainMenuPage } from '@/pages';
+import { BasketPage, LandingPage, MainMenuPage } from '@/pages';
+import { AdminPage } from '@/pages/admin-page/AdminPage';
 import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
@@ -10,6 +11,8 @@ const App: React.FC = () => {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/main" element={<MainMenuPage />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path='/basket' element={<BasketPage/>} />
+                <Route path='/admin' element={<AdminPage/>}/>
             </Routes>
         </div>
     );

@@ -9,7 +9,7 @@ type BasketItemUIProps = {
   onRemove: (id: number) => void;
 }
 
-const BasketItemUI = ({ dish, onAdd, onRemove }: BasketItemUIProps) => {
+export const BasketItemUI = ({ dish, onAdd, onRemove }: BasketItemUIProps) => {
     return (
 
         <div className={styles.basket_item_info}>
@@ -21,5 +21,3 @@ const BasketItemUI = ({ dish, onAdd, onRemove }: BasketItemUIProps) => {
 
     );
 };
-
-export default BasketItemUI;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import ButtonUI from '../buttonUI/ButtonUI';
 import styles from './ModalUI.module.css';
+import { ButtonUI } from '..';
 
 type ModalUIProps = {
   isOpen: boolean;
@@ -8,7 +8,7 @@ type ModalUIProps = {
   children: React.ReactNode;
 };
 
-const ModalUI:FC<ModalUIProps> = ({ isOpen, onClose , children }) => {
+export const ModalUI:FC<ModalUIProps> = ({ isOpen, onClose , children }) => {
     if (!isOpen) {
         return null;
     }
@@ -21,4 +21,3 @@ const ModalUI:FC<ModalUIProps> = ({ isOpen, onClose , children }) => {
     );
 };
 
-export default ModalUI;

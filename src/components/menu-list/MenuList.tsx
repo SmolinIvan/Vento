@@ -1,6 +1,7 @@
-import MenuItemUI, { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import styles from './MenuList.module.css';
 import { MenuContext } from '@/context/MenuContext';
+import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
+import { MenuItemUI } from '@/shared/ui';
 import { useContext } from 'react';
 
 type MenuListProps = {

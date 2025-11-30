@@ -10,7 +10,7 @@ type ButtonUIProps = {
     className?: string;
     isOpen?: boolean;
 };
-const ButtonUI: FC<ButtonUIProps> = ({ children, onClick, type, to, className=styles.button_defaulf, isOpen }) => {
+export const ButtonUI: FC<ButtonUIProps> = ({ children, onClick, type, to, className=styles.button_defaulf, isOpen }) => {
     return type === 'button' ? (
         <button onClick={onClick} className={className}>
             {children}
@@ -30,4 +30,3 @@ const ButtonUI: FC<ButtonUIProps> = ({ children, onClick, type, to, className=st
         </Link>
     );
 };
-export default ButtonUI;

@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import ButtonUI from '../buttonUI/ButtonUI';
-import BasketItemUI from '../basket-itemUI/BasketItemUI';
 import styles from './BasketUI.module.css';
 import { BasketDish } from '@/context/BasketContext';
 import { Dish } from '../menu-itemUI/MenuItemUI';
+import { BasketItemUI, ButtonUI } from '..';
 
 type BasketUIProps = {
     dishes: BasketDish[];
@@ -11,7 +10,7 @@ type BasketUIProps = {
     onAdd: (dish: Dish) => void;
     onRemove: (id: number) => void
 };
-const BasketUI:FC<BasketUIProps> =({dishes, finalPrice, onAdd, onRemove}: BasketUIProps) => {
+export const BasketUI:FC<BasketUIProps> =({dishes, finalPrice, onAdd, onRemove}: BasketUIProps) => {
 
     return (
         <div className={styles.basket}>
@@ -36,6 +35,3 @@ const BasketUI:FC<BasketUIProps> =({dishes, finalPrice, onAdd, onRemove}: Basket
         </div>
     );
 };
-
-
-export default BasketUI;

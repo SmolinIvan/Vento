@@ -1,8 +1,8 @@
-import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
 import styles from './DishFilter.module.css';
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { MenuContext } from '@/context/MenuContext';
 import { useContext } from 'react';
+import { ButtonUI } from '@/shared/ui';
 type DishFilterProps = {
   onClick: (dishType:string) => void;
   activeFilter: string;

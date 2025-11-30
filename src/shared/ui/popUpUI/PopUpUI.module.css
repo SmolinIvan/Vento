@@ -18,6 +18,15 @@
   border-radius: var(--border-radius-xl);
 }
 
+.popup_button_close{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: var(--bg-secondary);
+  border: 2px solid #f5deb3;
+  border-radius: var(--border-radius-xl);
+}
+
 .popup_content.left {
   right: 0;
 }

@@ -1,8 +1,8 @@
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { FC } from 'react';
 import styles from './DishInfoUI.module.css';
-import { CountingUI } from '../countingUI/CountingUI';
 import { BasketDish } from '@/context/BasketContext';
+import { CountingUI } from '../countingUI';
 
 type DishInfoUIProps = {
   currentDish: Dish;
@@ -11,7 +11,7 @@ type DishInfoUIProps = {
   onRemove: (id: number) => void;
 };
 
-const DishInfoUI:FC<DishInfoUIProps> = ({ currentDish, basketDish, onAdd, onRemove }) => {
+export const DishInfoUI:FC<DishInfoUIProps> = ({ currentDish, basketDish, onAdd, onRemove }) => {
     return (
         <div className={styles.dish_info}>
             {/* <img src={dish?.imageRef} alt={dish?.name} /> */}
@@ -30,5 +30,3 @@ const DishInfoUI:FC<DishInfoUIProps> = ({ currentDish, basketDish, onAdd, onRemo
         </div>
     );
 };
-
-export default DishInfoUI;

@@ -24,8 +24,7 @@ type MenuItemUIProps = {
   onClick: (dish:Dish) => void;
 }
 
-
-const MenuItemUI = ({ dish, onClick }: MenuItemUIProps) => {
+export const MenuItemUI = ({ dish, onClick }: MenuItemUIProps) => {
     return (
         <div className={styles.menu_item} onClick={() => onClick(dish)}>
             <span className={styles.menu_item_title}>{dish.name}</span>
@@ -37,5 +36,3 @@ const MenuItemUI = ({ dish, onClick }: MenuItemUIProps) => {
         </div>
     );
 };
-
-export default MenuItemUI;

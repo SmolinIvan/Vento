@@ -5,10 +5,10 @@ import { DISHES } from '@/mockData/menuItems';
 import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
 import { MenuContext } from '@/context/MenuContext';
 import { useContext, useEffect, useState } from 'react';
-import ModalUI from '@/shared/ui/modalUI/ModalUI';
 import DishInfo from '@/components/dish-info/DishInfo';
 import HeaderMenu from '@/components/header-menu/HeaderMenu';
 import { DishFilter } from '@/components';
+import { ModalUI } from '@/shared/ui';
 
 
 export const MainMenuPage: React.FC = () => {

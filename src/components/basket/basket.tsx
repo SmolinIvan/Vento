@@ -1,6 +1,6 @@
 import { BasketContext } from '@/context/BasketContext';
+import { BasketUI } from '@/shared/ui';
 import { useContext } from 'react';
-import BasketUI from '@/shared/ui/basketUI/BasketUI';
 
 export const Basket = () => {
 

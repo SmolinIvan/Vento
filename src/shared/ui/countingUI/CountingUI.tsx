@@ -1,7 +1,7 @@
 import { BasketDish } from '@/context/BasketContext';
 import styles from './CountingUI.module.css';
-import ButtonUI from '../buttonUI/ButtonUI';
 import { Dish } from '../menu-itemUI/MenuItemUI';
+import { ButtonUI } from '..';
 
 type CountingUIProps = {
     currentDish: Dish;

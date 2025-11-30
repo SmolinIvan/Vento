@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PopUpUI.module.css';
-import ButtonUI from '../buttonUI/ButtonUI';
+import { ButtonUI } from '..';
 
 interface PopupProps {
   text:string;
@@ -11,7 +11,7 @@ interface PopupProps {
   isOpen:boolean;
 }
 
-const PopUpUI = React.forwardRef<HTMLDivElement, PopupProps>(({
+export const PopUpUI = React.forwardRef<HTMLDivElement, PopupProps>(({
     text,
     children,
     position = 'left',
@@ -36,11 +36,16 @@ const PopUpUI = React.forwardRef<HTMLDivElement, PopupProps>(({
                     ref={ref}
                     className={`${styles.popup_content} ${styles[position]}`}
                 >
+                    <ButtonUI
+                        className={styles.popup_button_close}
+                        type="button"
+                        onClick={togglePopup}
+                    >
+                        X
+                    </ButtonUI>
                     {children}
                 </div>
             )}
         </div>
     );
 });
-
-export default PopUpUI;
