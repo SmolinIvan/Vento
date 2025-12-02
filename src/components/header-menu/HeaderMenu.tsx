@@ -4,6 +4,8 @@ import { Basket } from '../basket';
 import { useLocation } from 'react-router-dom';
 import { ButtonUI } from '@/shared/ui';
 import { PopUp } from '..';
+import { BasketButtonUI } from '@/shared/ui/basket-buttonUI/BasketButtonUI';
+import svgBurger from '../../assets/svg/burger.svg';
 
 const HeaderMenu = () => {
 
@@ -27,6 +29,9 @@ const HeaderMenu = () => {
             <PopUp buttonClassName={styles.button} buttonText='Корзина' >
                 <Basket />
             </PopUp>
+            <BasketButtonUI imageRefs={[svgBurger]} onClick={function (): void {
+                throw new Error('Function not implemented.');
+            } }/>
         </div>
     );
 };

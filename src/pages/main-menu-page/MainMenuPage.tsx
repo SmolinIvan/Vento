@@ -47,6 +47,9 @@ export const MainMenuPage: React.FC = () => {
 
     return (
         <div className={styles.main_menu_block}>
+            {/* <BasketButtonUI imageRefs={[svgBurger]} onClick={function (): void {
+                throw new Error('Function not implemented.');
+            } } /> */}
             <HeaderMenu />
             <h1 className={styles.title}>Main Menu Page</h1>
             <div className={styles.menu_block}>
