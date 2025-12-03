@@ -1,1 +1,2 @@
-export type { DishType } from './DishType';
+export type { DishType } from './types';
+export type { BasketDishType } from './types';

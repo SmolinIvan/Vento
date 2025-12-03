@@ -1,10 +1,9 @@
 import { useContext } from 'react';
-import { translateFoodType } from '../../shared/helpers/translateDishType';
 import { MenuContext } from '@context/MenuContext';
 import styles from './DishFilter.module.css';
 import { DishType } from '@shared-types';
-import { ButtonUI } from '@ui/*';
-
+import { ButtonUI } from '@ui';
+import { translateDishCategory } from '@helpers';
 
 type DishFilterProps = {
   onClick: (dishType:string) => void;
@@ -28,7 +27,7 @@ export const DishFilter = ({ onClick, activeFilter }: DishFilterProps) => {
                 {dishFilterTypes.map((dishFilterType,i) => (
                     <li key={i} className={activeFilter === dishFilterType ? `${styles.list_item} ${styles.list_item_active}` : styles.list_item}>
                         <ButtonUI type='button' onClick={() => onClick(dishFilterType)} className={styles.filter_button}>
-				        {translateFoodType(dishFilterType)}
+				        {translateDishCategory(dishFilterType)}
 				        </ButtonUI>
                     </li>
                 ))}

@@ -16,3 +16,7 @@ export type DishType = {
   price: number;
   description: string;
 }
+
+export type BasketDishType = DishType & {
+    count: number;
+};

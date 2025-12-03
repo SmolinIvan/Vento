@@ -2,7 +2,7 @@ import { MenuContext } from '@context/MenuContext';
 import { useContext } from 'react';
 import styles from './MenuList.module.css';
 import { DishType } from '@shared-types';
-import { MenuItemUI } from '@ui/*';
+import { MenuItemUI } from '@ui';
 
 type MenuListProps = {
     onClick: (dish: DishType) => void;

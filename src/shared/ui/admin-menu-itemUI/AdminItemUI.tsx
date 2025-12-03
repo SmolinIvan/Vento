@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ButtonUI } from '../buttonUI';
+import { ButtonUI } from '@ui';
 import styles from './AdminItemUI.module.css';
 import { DishType } from '@shared-types';
 

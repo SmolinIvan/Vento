@@ -1,9 +1,9 @@
 
 
-import { HeaderMenu, DishFilter, DishInfo, MenuList } from '@components/*';
+import { HeaderMenu, DishFilter, DishInfo, MenuList } from '@components';
 import { MenuContext } from '@context/MenuContext';
 import { DishType } from '@shared-types';
-import { ModalUI } from '@ui/*';
+import { ModalUI } from '@ui';
 import { useContext, useState, useEffect } from 'react';
 import { DISHES } from '../../mockData/menuItems';
 import styles from './MainMenuPage.module.css';

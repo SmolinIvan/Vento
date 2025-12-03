@@ -1,12 +1,11 @@
-import { BasketDish } from '@context/BasketContext';
 import { FC } from 'react';
 import styles from './DishInfoUI.module.css';
-import { DishType } from '@shared-types';
-import { CountingUI } from '..';
+import { BasketDishType, DishType } from '@shared-types';
+import { CountingUI } from '@ui';
 
 type DishInfoUIProps = {
   currentDish: DishType;
-  basketDish: BasketDish | undefined;
+  basketDish: BasketDishType | undefined;
   onAdd: (dish: DishType) => void;
   onRemove: (id: number) => void;
 };

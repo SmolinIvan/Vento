@@ -1,5 +1,5 @@
 import { BasketContext } from '@context/BasketContext';
-import { BasketUI } from '@ui/*';
+import { BasketUI } from '@ui';
 import { useContext } from 'react';
 
 export const Basket = () => {

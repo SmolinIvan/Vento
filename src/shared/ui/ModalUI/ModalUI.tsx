@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './ModalUI.module.css';
-import { ButtonUI } from '..';
+import { ButtonUI } from '@ui';
 
 type ModalUIProps = {
   isOpen: boolean;

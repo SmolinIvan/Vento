@@ -24,14 +24,15 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components"],
-      "@utils/*": ["src/utils/*"],
-      "@hooks/*": ["src/hooks/*"],
+      "@components": ["src/components"],
+      "@utils": ["src/utils/*"],
+      "@hooks": ["src/hooks/*"],
       "@shared-types": ["src/shared/types/index"],
-      "@assets/*": ["src/assets/*"],
-      "@pages/*": ["src/pages"],
-      "@ui/*": ["src/shared/ui"],
-      "@context/*":["src/context/*"]
+      "@assets": ["src/assets/*"],
+      "@pages": ["src/pages"],
+      "@ui": ["src/shared/ui"],
+      "@context/*":["src/context"],
+      "@helpers":["src/shared/helpers/index"]
     },
   },
   "include": [

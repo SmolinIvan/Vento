@@ -1,11 +1,9 @@
 
 import styles from './HeaderMenu.module.css';
 import svgBurger from '../../assets/svg/burger.svg';
-import { ButtonUI, BasketButtonUI } from '@ui/*';
+import { ButtonUI, BasketButtonUI } from '@ui';
 import { useLocation } from 'react-router-dom';
-import { Basket } from '../basket';
-import { PopUp } from '../popUp';
-
+import { Basket, PopUp } from '@components';
 
 export const HeaderMenu = () => {
 

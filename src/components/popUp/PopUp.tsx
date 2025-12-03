@@ -1,5 +1,5 @@
 
-import { PopUpUI } from '@ui/*';
+import { PopUpUI } from '@ui';
 import { useState, useEffect, useRef } from 'react';
 
 type PopUpProps = {

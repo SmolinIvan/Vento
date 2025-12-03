@@ -33,14 +33,15 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@pages/*': path.resolve(__dirname, 'src/pages'),
-            '@components/*': path.resolve(__dirname, 'src/components'),
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@components': path.resolve(__dirname, 'src/components'),
             '@utils/*': path.resolve(__dirname, 'src/utils'),
             // '@types': path.resolve(__dirname, 'src/shared/types'), // ← для .d.ts файлов
-            "@shared-types/*": path.resolve(__dirname,'src/shared/types/index'),
+            "@shared-types": path.resolve(__dirname,'src/shared/types/index'),
             // '@shared/types': path.resolve(__dirname, 'src/shared/types'),
-            '@ui/*': path.resolve(__dirname, 'src/shared/ui'),
+            '@ui': path.resolve(__dirname, 'src/shared/ui'),
             '@context/*': path.resolve(__dirname, 'src/context'),
+            '@helpers': path.resolve(__dirname, 'src//shared/helpers/index'),
             // другие алиасы...
         },
         extensions: ['.tsx', '.ts', '.js'],

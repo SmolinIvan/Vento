@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PopUpUI.module.css';
-import { ButtonUI } from '..';
+import { ButtonUI } from '@ui';
 
 interface PopupProps {
   text:string;

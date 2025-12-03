@@ -1,6 +1,6 @@
 import { BasketContext } from '@context/BasketContext';
 import { DishType } from '@shared-types';
-import { DishInfoUI } from '@ui/*';
+import { DishInfoUI } from '@ui';
 import { useContext } from 'react';
 
 type DishInfoProps = {

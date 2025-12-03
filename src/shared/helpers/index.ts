@@ -1,0 +1,1 @@
+export {translateDishCategory} from './translateDishCategory';
