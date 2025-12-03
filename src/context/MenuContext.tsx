@@ -1,14 +1,15 @@
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
+
+import { DishType } from '@shared-types';
 import { createContext, FC, PropsWithChildren, useState } from 'react';
 
 type MenuContextState = {
-  dishes: Dish[]
+  dishes: DishType[]
   activeFilter: string;
-  filteredDishes: Dish[];
-  setDishes: (dishes: Dish[]) => void;
+  filteredDishes: DishType[];
+  setDishes: (dishes: DishType[]) => void;
   setActiveFilter: (filterType: string) => void;
-  setFilteredDishes: (dishes: Dish[]) => void;
-  filterDishes: (filterType: string, allDishes: Dish[]) => void;
+  setFilteredDishes: (dishes: DishType[]) => void;
+  filterDishes: (filterType: string, allDishes: DishType[]) => void;
 }
 
 const defaultContextState: MenuContextState = {
@@ -24,9 +25,9 @@ const defaultContextState: MenuContextState = {
 export const MenuContext = createContext<MenuContextState>(defaultContextState);
 
 export const MenuProvider: FC<PropsWithChildren<object>> = ({ children }) => {
-    const [dishes, setDishes] = useState<Dish[]>(defaultContextState.dishes);
+    const [dishes, setDishes] = useState<DishType[]>(defaultContextState.dishes);
     const [activeFilter, setActiveFilter] = useState<string>(defaultContextState.activeFilter);
-    const [filteredDishes, setFilteredDishes] = useState<Dish[]>(defaultContextState.filteredDishes);
+    const [filteredDishes, setFilteredDishes] = useState<DishType[]>(defaultContextState.filteredDishes);
 
     const filterDishes = (filterType: string) => {
         if (filterType === 'all') {

@@ -1,7 +1,8 @@
-import HeaderMenu from '@/components/header-menu/HeaderMenu';
-import { BasketContext } from '@/context/BasketContext';
-import { BasketUI } from '@/shared/ui';
-import React, { useContext } from 'react';
+
+import { HeaderMenu } from '@components/*';
+import { BasketContext } from '@context/BasketContext';
+import { BasketUI } from '@ui/*';
+import { useContext } from 'react';
 
 export const BasketPage =()=>{
 

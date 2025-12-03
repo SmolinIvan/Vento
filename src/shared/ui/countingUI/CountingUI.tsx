@@ -1,12 +1,12 @@
-import { BasketDish } from '@/context/BasketContext';
+import { BasketDish } from '@context/BasketContext';
+import { ButtonUI } from '@ui/buttonUI';
 import styles from './CountingUI.module.css';
-import { Dish } from '../menu-itemUI/MenuItemUI';
-import { ButtonUI } from '..';
+import { DishType } from '@shared-types';
 
 type CountingUIProps = {
-    currentDish: Dish;
+    currentDish: DishType;
     basketDish: BasketDish | undefined;
-    onAdd: (currentDish: Dish) => void;
+    onAdd: (currentDish: DishType) => void;
     onRemove: (id: number) => void;
     className?: string;
 }

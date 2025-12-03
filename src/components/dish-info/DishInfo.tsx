@@ -1,13 +1,13 @@
-import { BasketContext } from '@/context/BasketContext';
-import { DishInfoUI } from '@/shared/ui';
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
+import { BasketContext } from '@context/BasketContext';
+import { DishType } from '@shared-types';
+import { DishInfoUI } from '@ui/*';
 import { useContext } from 'react';
 
-type DissInfoProps = {
-  currentDish: Dish;
+type DishInfoProps = {
+  currentDish: DishType;
 };
 
-const DishInfo = ({ currentDish }: DissInfoProps) => {
+export const DishInfo = ({ currentDish }: DishInfoProps) => {
     const {addDish, removeDish} = useContext(BasketContext);
     const {addedDishes} = useContext(BasketContext);
     const addedDish = addedDishes.find((dish) => dish.id === currentDish.id);
@@ -17,4 +17,3 @@ const DishInfo = ({ currentDish }: DissInfoProps) => {
     );
 };
 
-export default DishInfo;

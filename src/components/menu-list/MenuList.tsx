@@ -1,14 +1,14 @@
-import styles from './MenuList.module.css';
-import { MenuContext } from '@/context/MenuContext';
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
-import { MenuItemUI } from '@/shared/ui';
+import { MenuContext } from '@context/MenuContext';
 import { useContext } from 'react';
+import styles from './MenuList.module.css';
+import { DishType } from '@shared-types';
+import { MenuItemUI } from '@ui/*';
 
 type MenuListProps = {
-    onClick: (dish: Dish) => void;
+    onClick: (dish: DishType) => void;
 
 };
-const MenuList = ({onClick}: MenuListProps) => {
+export const MenuList = ({onClick}: MenuListProps) => {
 
     const {filteredDishes} = useContext(MenuContext);
 
@@ -20,5 +20,3 @@ const MenuList = ({onClick}: MenuListProps) => {
         </div>
     );
 };
-
-export default MenuList;

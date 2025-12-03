@@ -1,5 +1,5 @@
-import { BasketPage, LandingPage, MainMenuPage } from '@/pages';
-import { AdminPage } from '@/pages/admin-page/AdminPage';
+
+import { LandingPage, MainMenuPage, BasketPage, AdminPage } from '@pages/*';
 import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';

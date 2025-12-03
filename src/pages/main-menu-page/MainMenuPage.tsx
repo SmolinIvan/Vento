@@ -1,21 +1,18 @@
-import styles from './MainMenuPage.module.css';
-// import ButtonUI from '@/shared/ui/buttonUI/ButtonUI';
-import MenuList from '@/components/menu-list/MenuList';
-import { DISHES } from '@/mockData/menuItems';
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
-import { MenuContext } from '@/context/MenuContext';
-import { useContext, useEffect, useState } from 'react';
-import DishInfo from '@/components/dish-info/DishInfo';
-import HeaderMenu from '@/components/header-menu/HeaderMenu';
-import { DishFilter } from '@/components';
-import { ModalUI } from '@/shared/ui';
 
+
+import { HeaderMenu, DishFilter, DishInfo, MenuList } from '@components/*';
+import { MenuContext } from '@context/MenuContext';
+import { DishType } from '@shared-types';
+import { ModalUI } from '@ui/*';
+import { useContext, useState, useEffect } from 'react';
+import { DISHES } from '../../mockData/menuItems';
+import styles from './MainMenuPage.module.css';
 
 export const MainMenuPage: React.FC = () => {
     const { dishes, activeFilter,filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
     const [isOpen, setIsOpen] = useState(false);
     // const [isOpenBasketModal, setIsOpenBasketModal] = useState(false);
-    const [currentDish, setCurrentDish] = useState<Dish | null>(null);
+    const [currentDish, setCurrentDish] = useState<DishType | null>(null);
 
     useEffect(() => {
         setDishes(DISHES);
@@ -27,7 +24,7 @@ export const MainMenuPage: React.FC = () => {
         setActiveFilter(dishType);
     };
 
-    const handleOpenDishModal = (currentDish:Dish) => {
+    const handleOpenDishModal = (currentDish:DishType) => {
         setCurrentDish(currentDish);
         setIsOpen(true);
     };

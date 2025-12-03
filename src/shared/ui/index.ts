@@ -6,4 +6,5 @@ export * from './countingUI';
 export * from './buttonUI';
 export * from './basketUI';
 export * from './basket-itemUI';
+export * from './basket-buttonUI';
 export type {FoodType} from './constants';

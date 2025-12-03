@@ -1,13 +1,13 @@
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
+import { BasketDish } from '@context/BasketContext';
 import { FC } from 'react';
 import styles from './DishInfoUI.module.css';
-import { BasketDish } from '@/context/BasketContext';
-import { CountingUI } from '../countingUI';
+import { DishType } from '@shared-types';
+import { CountingUI } from '..';
 
 type DishInfoUIProps = {
-  currentDish: Dish;
+  currentDish: DishType;
   basketDish: BasketDish | undefined;
-  onAdd: (dish: Dish) => void;
+  onAdd: (dish: DishType) => void;
   onRemove: (id: number) => void;
 };
 

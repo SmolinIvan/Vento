@@ -1,9 +1,8 @@
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
-import burgerSVG from '@/assets/svg/burger.svg';
 
-// export type DishWithCategory = Dish;
+import { DishType } from '@shared-types';
+import burgerSVG from '../assets/svg/burger.svg';
 
-export const DISHES: Dish[] = [
+export const DISHES: DishType[] = [
     {
         id: 1,
         name: 'Паста арабьята',

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { Dish } from '../menu-itemUI/MenuItemUI';
 import { ButtonUI } from '../buttonUI';
 import styles from './AdminItemUI.module.css';
+import { DishType } from '@shared-types';
 
 type AdminItemUIProps = {
-    dish:Dish;
+    dish:DishType;
     onClick: () => void;
 
 }

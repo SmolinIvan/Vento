@@ -3,7 +3,7 @@ import styles from './LandingPage.module.css';
 import crossainsImage from '../../assets/images/cruossains.png';
 import logoCatCloud from '../../assets/logo/logoCatCloud.png';
 import logoVento from '../../assets/logo/logo.png';
-import HeaderMenu from '@/components/header-menu/HeaderMenu';
+import { HeaderMenu } from '@components/*';
 
 export const LandingPage: React.FC = () => {
     return (

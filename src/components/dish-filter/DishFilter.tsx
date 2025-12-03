@@ -1,9 +1,11 @@
-import styles from './DishFilter.module.css';
-import { Dish } from '@/shared/ui/menu-itemUI/MenuItemUI';
-import { MenuContext } from '@/context/MenuContext';
 import { useContext } from 'react';
-import { ButtonUI } from '@/shared/ui';
-import { translateFoodType } from '@/shared/helpers/translateDishType';
+import { translateFoodType } from '../../shared/helpers/translateDishType';
+import { MenuContext } from '@context/MenuContext';
+import styles from './DishFilter.module.css';
+import { DishType } from '@shared-types';
+import { ButtonUI } from '@ui/*';
+
+
 type DishFilterProps = {
   onClick: (dishType:string) => void;
   activeFilter: string;
@@ -13,7 +15,7 @@ export const DishFilter = ({ onClick, activeFilter }: DishFilterProps) => {
 
     const {dishes} = useContext(MenuContext);
 
-    const dishFilterTypes:string[] = dishes.reduce((acc:string[], dish:Dish) => {
+    const dishFilterTypes:string[] = dishes.reduce((acc:string[], dish:DishType) => {
         if (!acc.includes(dish.type)) {
             acc.push(dish.type);
         }

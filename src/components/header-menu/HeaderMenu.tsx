@@ -1,13 +1,13 @@
 
 import styles from './HeaderMenu.module.css';
-import { Basket } from '../basket';
-import { useLocation } from 'react-router-dom';
-import { ButtonUI } from '@/shared/ui';
-import { PopUp } from '..';
-import { BasketButtonUI } from '@/shared/ui/basket-buttonUI/BasketButtonUI';
 import svgBurger from '../../assets/svg/burger.svg';
+import { ButtonUI, BasketButtonUI } from '@ui/*';
+import { useLocation } from 'react-router-dom';
+import { Basket } from '../basket';
+import { PopUp } from '../popUp';
 
-const HeaderMenu = () => {
+
+export const HeaderMenu = () => {
 
     const location = useLocation();
 
@@ -35,5 +35,3 @@ const HeaderMenu = () => {
         </div>
     );
 };
-
-export default HeaderMenu;
