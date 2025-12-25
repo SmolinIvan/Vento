@@ -1,4 +1,3 @@
-
 import { LandingPage, MainMenuPage, BasketPage, AdminPage } from '@pages';
 import React from 'react';
 
@@ -26,6 +25,5 @@ const NotFound: React.FC = () => {
         </div>
     );
 };
-
 
 export default App;

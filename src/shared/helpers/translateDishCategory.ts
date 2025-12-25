@@ -1,5 +1,5 @@
-import { FOOD_TYPE_TRANSLATIONS } from '../ui/constants';
+import { DISH_CATEGORY_TRANSLATIONS } from '../constants';
 
 export const translateDishCategory = (type: string): string => {
-    return FOOD_TYPE_TRANSLATIONS[type] || type; // возвращаем исходный тип, если перевода нет
+    return DISH_CATEGORY_TRANSLATIONS[type] || type; // возвращаем исходный тип, если перевода нет
 };

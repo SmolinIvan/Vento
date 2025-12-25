@@ -19,7 +19,7 @@ export const DishFilter = ({ onClick, activeFilter }: DishFilterProps) => {
             acc.push(dish.type);
         }
         return acc;
-    }, ['Все блюда']);
+    }, ['all']);
 
   	return (
     	<div className={styles.dish_filter}>

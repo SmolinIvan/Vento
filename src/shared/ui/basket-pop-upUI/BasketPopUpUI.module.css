@@ -1,0 +1,76 @@
+.button {
+    height: 123px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    background-color: transparent;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; /* Ensure dish images don't overflow the button */
+}
+
+.basket_image {
+    position: absolute;
+    z-index: 1;
+    height: 123px;
+    width: 150px;
+}
+
+.dish {
+    position: absolute;
+    z-index: 0;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.popup_container {
+  position: relative;
+  display: inline-block;
+}
+
+.popup_content {
+  position: absolute;
+  top: 100%;
+  margin-top: 4px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  min-width: 150px;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in-out;
+  border: 2px solid black;
+  border-radius: var(--border-radius-xl);
+}
+
+.popup_button_close{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: var(--bg-secondary);
+  border: 2px solid #f5deb3;
+  border-radius: var(--border-radius-xl);
+}
+
+.popup_content.left {
+  right: 0;
+}
+
+.popup_content.right {
+  left: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* transform: translateY(-8px); */
+  }
+  to {
+    opacity: 1;
+    /* transform: translateY(0); */
+  }
+}

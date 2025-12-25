@@ -4,3 +4,4 @@ export * from './popUp';
 export * from './dish-info';
 export * from './header-menu';
 export * from './menu-list';
+export * from './basketPopUp';

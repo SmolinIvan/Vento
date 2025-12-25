@@ -19,7 +19,7 @@ type BasketContextState = {
 const defaultContextState:BasketContextState = {
     addedDishes: [{...DISHES[0],
         count: 1,
-    }, {...DISHES[1], count: 1 }, {...DISHES[2], count: 1 }],
+    }, {...DISHES[1], count: 1 }, {...DISHES[3], count: 1}, {...DISHES[7], count: 1}],
     finalPrice: 0,
     setAddedDishes: () => {},
     addDish: () => {},

@@ -1,9 +1,8 @@
 
 import styles from './HeaderMenu.module.css';
-import svgBurger from '../../assets/svg/burger.svg';
-import { ButtonUI, BasketButtonUI } from '@ui';
+import { ButtonUI} from '@ui';
 import { useLocation } from 'react-router-dom';
-import { Basket, PopUp } from '@components';
+import { Basket, BasketPopUp } from '@components';
 
 export const HeaderMenu = () => {
 
@@ -24,12 +23,9 @@ export const HeaderMenu = () => {
             <ButtonUI type="link" to={to} className={styles.button}>
                 <span className={styles.text}>{text}</span>
             </ButtonUI>
-            <PopUp buttonClassName={styles.button} buttonText='Корзина' >
+            <BasketPopUp>
                 <Basket />
-            </PopUp>
-            <BasketButtonUI imageRefs={[svgBurger]} onClick={function (): void {
-                throw new Error('Function not implemented.');
-            } }/>
+            </BasketPopUp>
         </div>
     );
 };

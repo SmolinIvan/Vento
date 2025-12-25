@@ -1,4 +1,4 @@
-type DishCategory = 'breakfast' | 'dinner' | 'deserts' | 'soups' | 'pasta';
+export type DishCategory = 'breakfast' | 'dinner' | 'deserts' | 'soups' | 'pasta';
 
 type DishEnergy = {
   kcal: number;

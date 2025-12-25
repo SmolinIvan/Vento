@@ -24,11 +24,11 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
+      // "@assets-svg": ["src/assets/index"],
       "@components": ["src/components"],
       "@utils": ["src/utils/*"],
       "@hooks": ["src/hooks/*"],
       "@shared-types": ["src/shared/types/index"],
-      "@assets": ["src/assets/*"],
       "@pages": ["src/pages"],
       "@ui": ["src/shared/ui"],
       "@context/*":["src/context"],

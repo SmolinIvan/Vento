@@ -1,16 +1,28 @@
-import { PopUpUI } from '@ui';
-import { useState, useEffect, useRef } from 'react';
+import { BasketContext } from '@context/*';
+import { BasketDishType } from '@shared-types';
+import { BasketPopUpUI } from '@ui';
+import { useState, useEffect, useRef, useContext } from 'react';
+import { DishCategory } from 'src/shared/types/types';
 
-type PopUpProps = {
-    buttonClassName:string;
-    buttonText:string;
+
+type BasketPopUpProps = {
     children: React.ReactNode;
     position?: 'left' | 'right';
 }
 
-export const PopUp = ({buttonClassName, buttonText, children, position='left'} :PopUpProps) => {
+export const BasketPopUp = ({ children, position='left'} :BasketPopUpProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const popUpRef = useRef<HTMLDivElement>(null);
+
+    const {addedDishes} = useContext(BasketContext);
+
+    const dishFilterTypes:DishCategory[] = addedDishes.reduce((acc:DishCategory[], dish:BasketDishType) => {
+        if (!acc.includes(dish.type)) {
+            acc.push(dish.type);
+        }
+        return acc;
+    }, []);
+
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -44,17 +56,17 @@ export const PopUp = ({buttonClassName, buttonText, children, position='left'} :
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
+        console.log('togglePopup');
     };
     return (
-        <PopUpUI
+        <BasketPopUpUI
             ref={popUpRef}
-            className={buttonClassName}
-            text={buttonText}
             togglePopup={togglePopup}
             isOpen={isOpen}
             position={position}
+            dishTypes={dishFilterTypes}
         >
             {children}
-        </PopUpUI>
+        </BasketPopUpUI>
     );
 };
