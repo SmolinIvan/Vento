@@ -1,5 +1,3 @@
-
-
 import { HeaderMenu, DishFilter, DishInfo, MenuList } from '@components';
 import { MenuContext } from '@context/MenuContext';
 import { DishType } from '@shared-types';
@@ -9,7 +7,7 @@ import { DISHES } from '../../mockData/menuItems';
 import styles from './MainMenuPage.module.css';
 
 export const MainMenuPage: React.FC = () => {
-    const { dishes, activeFilter,filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
+    const { dishes, activeFilter, filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
     const [isOpen, setIsOpen] = useState(false);
     // const [isOpenBasketModal, setIsOpenBasketModal] = useState(false);
     const [currentDish, setCurrentDish] = useState<DishType | null>(null);

@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.input_block {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+.energy_block {
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+}
+
+.input_energy {
+    max-width: 50px;
+}
+
+.submit_button {
+    max-width: 100px;
+}
