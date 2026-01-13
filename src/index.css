@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: var(--font-family-primary);
-  background: var(--bg-primary);
+  background: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

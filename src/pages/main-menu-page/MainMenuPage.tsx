@@ -1,10 +1,11 @@
-import { HeaderMenu, DishFilter, DishInfo, MenuList } from '@components';
+import { DishFilter, DishInfo, MenuList } from '@components';
 import { MenuContext } from '@context/MenuContext';
 import { DishType } from '@shared-types';
 import { ModalUI } from '@ui';
 import { useContext, useState, useEffect } from 'react';
 import { DISHES } from '../../mockData/menuItems';
 import styles from './MainMenuPage.module.css';
+import logoVento from '../../assets/logo/logo.png';
 
 export const MainMenuPage: React.FC = () => {
     const { dishes, activeFilter, filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
@@ -45,8 +46,9 @@ export const MainMenuPage: React.FC = () => {
             {/* <BasketButtonUI imageRefs={[svgBurger]} onClick={function (): void {
                 throw new Error('Function not implemented.');
             } } /> */}
-            <HeaderMenu />
-            <h1 className={styles.title}>Main Menu Page</h1>
+            <img src={logoVento} alt="Vento" className={styles.logo_text} />
+            {/* <HeaderMenu /> */}
+            {/* <h1 className={styles.title}>Main Menu Page</h1> */}
             <div className={styles.menu_block}>
                 <DishFilter onClick={handleFilterDishes} activeFilter={activeFilter}/>
                 <MenuList onClick={handleOpenDishModal} />

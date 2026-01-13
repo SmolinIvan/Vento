@@ -37,8 +37,8 @@
   --z-tooltip: 1060;
 
   /* Фоны */
-  --bg-primary: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
-  --bg-secondary: linear-gradient(135deg, #ffb6c1, #fffacd);  
+  /* --bg-primary: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+  --bg-secondary: linear-gradient(135deg, #ffb6c1, #fffacd);   */
   --bg-accent: rgb(253, 244, 227);
   --accent-hover:rgb(253, 230, 202, 0.3);
 }

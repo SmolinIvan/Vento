@@ -1,12 +1,12 @@
 
 import { DishType } from '@shared-types';
-import burgerSVG from '../assets/svg/burger.svg';
+// import burgerSVG from '../assets/svg/burger.svg';
 
 export const DISHES: DishType[] = [
     {
         id: 1,
         name: 'Паста арабьята',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'pasta',
         energy: {
             kcal: 450,
@@ -20,7 +20,7 @@ export const DISHES: DishType[] = [
     {
         id: 2,
         name: 'Рамен',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'soups',
         energy: {
             kcal: 450,
@@ -34,7 +34,7 @@ export const DISHES: DishType[] = [
     {
         id: 3,
         name: 'Борщ',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'soups',
         energy: {
             kcal: 150,
@@ -48,7 +48,7 @@ export const DISHES: DishType[] = [
     {
         id: 4,
         name: 'Цезарь',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'dinner',
         energy: {
             kcal: 350,
@@ -62,7 +62,7 @@ export const DISHES: DishType[] = [
     {
         id: 5,
         name: 'Пицца Маргарита',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'dinner',
         energy: {
             kcal: 800,
@@ -76,7 +76,7 @@ export const DISHES: DishType[] = [
     {
         id: 6,
         name: 'Стейк',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'dinner',
         energy: {
             kcal: 600,
@@ -90,7 +90,7 @@ export const DISHES: DishType[] = [
     {
         id: 7,
         name: 'Бургер',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'dinner',
         energy: {
             kcal: 750,
@@ -104,7 +104,7 @@ export const DISHES: DishType[] = [
     {
         id: 8,
         name: 'Тирамису',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'deserts',
         energy: {
             kcal: 450,
@@ -118,7 +118,7 @@ export const DISHES: DishType[] = [
     {
         id: 9,
         name: 'Панна Котта',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'deserts',
         energy: {
             kcal: 320,
@@ -132,7 +132,7 @@ export const DISHES: DishType[] = [
     {
         id: 10,
         name: 'Сырники',
-        imageRef: burgerSVG,
+        imageRef: 'https://i1024.63pokupki.ru/item/x1024/ee787ad0b755b95da1dffd658652276fimwqnr2ldjtvfs2.jpg',
         type: 'breakfast',
         energy: {
             kcal: 280,

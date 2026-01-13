@@ -16,3 +16,9 @@
   padding: 0px 20px;
   width: 100%;
 }
+
+.logo_text {
+  position: absolute;
+  /* top: 20px;
+  left: 260px; */
+}

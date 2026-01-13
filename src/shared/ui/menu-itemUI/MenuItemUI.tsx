@@ -1,5 +1,4 @@
 import styles from './MenuItemUI.module.css';
-import logoCatCloud from '../../../assets/logo/logoCatCloud.png';
 import { DishType } from '@shared-types';
 
 type MenuItemUIProps = {
@@ -10,10 +9,10 @@ type MenuItemUIProps = {
 export const MenuItemUI = ({ dish, onClick }: MenuItemUIProps) => {
     return (
         <div className={styles.menu_item} onClick={() => onClick(dish)}>
-            <span className={styles.menu_item_title}>{dish.name}</span>
-            <div className={styles.menu_image_block}>
-                <img className={styles.menu_cloud} src={logoCatCloud} alt='logo' />
-                <img className={styles.menu_item_img} src={dish.imageRef} alt={dish.name} />
+            <img className={styles.menu_item_img} src={dish.imageRef} alt={dish.name} />
+            <div className={styles.menu_item_description_block}>
+                <span className={styles.menu_item_title}>{dish.name}</span>
+                <span className={styles.menu_item_description}>{dish.description}</span>
                 <span className={styles.menu_item_price}>{dish.price} рублей</span>
             </div>
         </div>
