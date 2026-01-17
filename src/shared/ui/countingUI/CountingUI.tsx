@@ -16,7 +16,7 @@ export const CountingUI = ({ currentDish, basketDish, onAdd, onRemove, className
             {basketDish === undefined ? (
                 // Показываем только кнопку "Добавить", если блюда нет в корзине
                 <ButtonUI className={styles.button} type="button" onClick={() => onAdd(currentDish)}>
-                    Добавить в корзину
+                    Добавить
                 </ButtonUI>
             ) : (
                 // Показываем кнопки управления количеством, если блюдо в корзине

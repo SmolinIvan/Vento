@@ -10,7 +10,7 @@ interface EditorFormProps {
 
 export const EditorForm:FC<EditorFormProps> = ({ dish, onSubmit }) => {
     const [formData, setFormData] = useState<DishType>(dish);
-    const dishTypes: DishCategory[] = ['soups', 'deserts', 'pasta', 'breakfast', 'dinner'];
+    const dishTypes: DishCategory[] = ['salads', 'hot', 'bakery', 'drinks', 'appetizers', 'bar'];
     const options = dishTypes.map(type => ({ value: type, label: type }));
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

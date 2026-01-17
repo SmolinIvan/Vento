@@ -4,19 +4,24 @@
     align-items: center;
     gap: 20px;
     font-size: var(--font-size-xl);
+    height: 40px;
 }
 
 .button {
-    font-size: var(--font-size-xl);
-    font-family: inherit;
-    background: var(--bg-secondary);
-    border: 2px solid #f5deb3;
-    border-radius: var(--border-radius-xl)
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    background: #E79CA6;
+    /* border: 2px solid #f5deb3; */
+    border-radius: var(--border-radius-xl);
+    height:100%;
+    min-width: 40px;
+    font-weight: 500;
 }
 
 .button:hover {
-    background: var(--bg-accent);
-    border: 2px solid black;
+    /* background: var(--bg-accent); */
+    /* border: 2px solid black; */
     border-radius: var(--border-radius-xl);
     cursor: pointer;
 }

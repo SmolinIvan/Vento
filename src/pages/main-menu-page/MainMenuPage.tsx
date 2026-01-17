@@ -24,8 +24,9 @@ export const MainMenuPage: React.FC = () => {
     };
 
     const handleOpenDishModal = (currentDish:DishType) => {
-        setCurrentDish(currentDish);
-        setIsOpen(true);
+        // setCurrentDish(currentDish);
+        // setIsOpen(true);
+        console.log(currentDish);
     };
 
     const handleCloseDishModal = () => {

@@ -4,12 +4,13 @@ import muffinSVG from '../assets/svg/muffin.svg';
 import soupSVG from '../assets/svg/soup.svg';
 
 export const DISH_CATEGORY_TRANSLATIONS: Record<string, string> = {
-    pasta: 'Паста',
-    soups: 'Супы',
-    dinner: 'Ужин',
-    deserts: 'Десерты',
-    breakfast: 'Завтрак',
+    bar: 'Бар',
+    salads: 'Салаты',
+    hot: 'Горячее',
+    bakery: 'Выпечка и десерты',
+    appetizers: 'Закуски',
     all: 'Все блюда',
+    drinks: 'Напитки',
     // добавляем другие типы по мере необходимости
 };
 
