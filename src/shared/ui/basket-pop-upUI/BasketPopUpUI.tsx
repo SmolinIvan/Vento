@@ -11,6 +11,7 @@ type BasketPopUpUIProps = {
   position?: 'left' | 'right';
   togglePopup: () => void;
   isOpen:boolean;
+  className?: string;
 };
 
 export const BasketPopUpUI = React.forwardRef<HTMLDivElement, BasketPopUpUIProps>(({
@@ -19,6 +20,7 @@ export const BasketPopUpUI = React.forwardRef<HTMLDivElement, BasketPopUpUIProps
     dishTypes,
     togglePopup,
     isOpen,
+    className=`${styles.popup_content} ${styles[position]}`,
 }, ref) => {
 
     // Fixed positions for dish images
@@ -56,7 +58,7 @@ export const BasketPopUpUI = React.forwardRef<HTMLDivElement, BasketPopUpUIProps
             {isOpen && (
                 <div
                     ref={ref}
-                    className={`${styles.popup_content} ${styles[position]}`}
+                    className={className}
                 >
                     <ButtonUI
                         className={styles.popup_button_close}

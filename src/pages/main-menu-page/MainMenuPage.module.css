@@ -6,6 +6,8 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
+  margin: 0px;
+  padding-top: 30px;
 }
 
 .menu_block {

@@ -1,0 +1,84 @@
+h1 {
+    font-family: 'Italiana', regular;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 24px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.logo_text {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+p {
+    font-family: 'Italiana', regular;
+    font-size: 40px;
+}
+
+.main {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    max-width: 1200px;
+    max-height: 1000px;
+}
+
+.address {
+    text-align: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Italiana', regular;
+    font-size: 40px;
+    gap: 40px;
+}
+
+.main_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacts {
+    font-family: inherit;
+    font-size: inherit;
+    font-family: 'Italiana', regular;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.schedule {
+    margin-bottom: 40px;
+}
+
+.work_hours {
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.days {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.hours {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.mail_description {
+    display: flex;
+}
+
+.mail {
+    font-family: inherit;
+    font-size: inherit;
+    color: #E79CA6;
+}

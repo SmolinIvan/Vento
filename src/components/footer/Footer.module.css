@@ -1,0 +1,16 @@
+.footer_main {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    align-items: center;
+    width: 100%;
+}
+
+.footer_link {
+    font-size: 40px;
+    font-weight: 400;
+    text-decoration: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    color: #171717;
+}

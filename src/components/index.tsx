@@ -7,4 +7,5 @@ export * from './menu-list';
 export * from './basket-pop-up';
 export * from './editor-form';
 export * from './menu-item';
+export * from './footer';
 

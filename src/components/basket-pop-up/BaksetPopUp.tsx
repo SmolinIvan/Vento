@@ -3,14 +3,16 @@ import { BasketDishType } from '@shared-types';
 import { BasketPopUpUI } from '@ui';
 import { useState, useEffect, useRef, useContext } from 'react';
 import { DishCategory } from 'src/shared/types/types';
+import styles from './BasketPopUp.module.css';
 
 
 type BasketPopUpProps = {
     children: React.ReactNode;
+    className?: string;
     position?: 'left' | 'right';
 }
 
-export const BasketPopUp = ({ children, position='left'} :BasketPopUpProps) => {
+export const BasketPopUp = ({ children, className=`${styles.main}`, position='left'} :BasketPopUpProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const popUpRef = useRef<HTMLDivElement>(null);
 
@@ -60,6 +62,7 @@ export const BasketPopUp = ({ children, position='left'} :BasketPopUpProps) => {
     };
     return (
         <BasketPopUpUI
+            className={className}
             ref={popUpRef}
             togglePopup={togglePopup}
             isOpen={isOpen}

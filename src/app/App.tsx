@@ -1,4 +1,5 @@
-import { LandingPage, MainMenuPage, BasketPage, AdminPage } from '@pages';
+import { Footer } from '@components';
+import { LandingPage, MainMenuPage, BasketPage, AdminPage, ContactsPage, AboutPage } from '@pages';
 import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
@@ -12,7 +13,10 @@ const App: React.FC = () => {
                 <Route path="*" element={<NotFound />} />
                 <Route path='/basket' element={<BasketPage/>} />
                 <Route path='/admin' element={<AdminPage/>}/>
+                <Route path='/contacts' element={<ContactsPage/>}/>
+                <Route path='/about' element={<AboutPage/>}/>
             </Routes>
+            <Footer />
         </div>
     );
 };

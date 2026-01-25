@@ -6,6 +6,13 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Italiana';
+  src: url('./assets/fonts/Italiana/Italiana-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: var(--font-family-primary);
@@ -18,7 +25,6 @@ a {
   text-decoration: none;
 }
 
-
 p {
   margin: 0;
   font-size: var(--font-size-xl);
@@ -27,6 +33,7 @@ p {
 h1 {
   margin: 0;
   font-size: var(--font-size-3xl);
+  font-family: 'Italiana', regular;
 }
 
 h2 {
