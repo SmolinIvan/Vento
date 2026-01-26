@@ -40,7 +40,7 @@
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 15px;
-  color: #525252;
+  color: var(--secondary-font-color);
 }
 
 .menu_item_buy_block{
@@ -54,7 +54,7 @@
 
 
 .menu_item_price{
-  color: #E79CA6;
+  color: var(--accent-primary);
   font-size: 20px;
   font-weight: 400;
 }

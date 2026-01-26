@@ -39,8 +39,15 @@
   /* Фоны */
   /* --bg-primary: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
   --bg-secondary: linear-gradient(135deg, #ffb6c1, #fffacd);   */
-  --bg-accent: rgb(253, 244, 227);
+  --bg-accent: #F5F5F5;
   --accent-hover:rgb(253, 230, 202, 0.3);
+
+  /* Цвета */
+  --accent-primary: #E79CA6;
+
+  --primary-font-color: #171717;
+  --secondary-font-color: #525252;
+  --accent-font-color: #FFFFFF;
 }
 
 

@@ -80,5 +80,5 @@ p {
 .mail {
     font-family: inherit;
     font-size: inherit;
-    color: #E79CA6;
+    color: var(--accent-primary);
 }

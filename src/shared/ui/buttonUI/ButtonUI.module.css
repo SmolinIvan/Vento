@@ -1,6 +1,5 @@
 .button_defaulf {
     background: var(--bg-secondary);
-    border: 2px solid #f5deb3;
     border-radius: var(--border-radius-xl);
     font-family: inherit;
     cursor: pointer;
@@ -8,12 +7,10 @@
 
 .button_defaulf:hover {
     background: var(--bg-secondary);
-    border: 2px solid #f5deb3;
     border-radius: var(--border-radius-xl);
 }
 
 .button_popup_open {
     background: var(--bg-primary);
-    border: 2px solid #e1fd2c;
     border-radius: var(--border-radius-xl);
 }

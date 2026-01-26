@@ -12,5 +12,5 @@
     text-decoration: none;
     border: none;
     font-family: 'Inter', sans-serif;
-    color: #171717;
+    color: var(--primary-font-color);
 }
