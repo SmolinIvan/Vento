@@ -18,21 +18,16 @@ p {
     font-size: 40px;
 }
 
-.main {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    max-width: 1200px;
-    max-height: 1000px;
-}
-
 .address {
     text-align: end;
     display: flex;
     flex-direction: row;
+    justify-self:center;
+    justify-items: center;
     justify-content: space-between;
     font-family: 'Italiana', regular;
+    max-width: 1200px;
+    max-height: 1000px; 
     font-size: 40px;
     gap: 40px;
 }

@@ -1,4 +1,4 @@
-import { DishFilter, DishInfo, MenuList, Footer, Basket, BasketPopUp } from '@components';
+import { DishFilter, DishInfo, MenuList, Footer, Basket, BasketPopUp, HeaderMenu } from '@components';
 import { MenuContext } from '@context/MenuContext';
 import { DishType } from '@shared-types';
 import { ModalUI } from '@ui';
@@ -56,13 +56,7 @@ export const MainMenuPage: React.FC = () => {
 
     return (
         <div className={styles.main_menu_block}>
-            <img src={logoVento} alt="Vento" className={styles.logo_text} />
-            <h1 className={styles.title}>Menu</h1>
-            {/* <BasketButtonUI imageRefs={[svgBurger]} onClick={function (): void {
-                throw new Error('Function not implemented.');
-            } } /> */}
-            {/* <HeaderMenu /> */}
-            {/* <h1 className={styles.title}>Main Menu Page</h1> */}
+            <HeaderMenu/>
             <div className={styles.menu_block}>
                 <DishFilter onClick={handleFilterDishes} activeFilter={activeFilter}/>
                 <MenuList onClick={handleOpenDishModal} />

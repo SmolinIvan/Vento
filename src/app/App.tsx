@@ -7,15 +7,17 @@ import { Route, Routes } from 'react-router-dom';
 const App: React.FC = () => {
     return (
         <div className="app">
-            <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/main" element={<MainMenuPage />} />
-                <Route path="*" element={<NotFound />} />
-                <Route path='/basket' element={<BasketPage/>} />
-                <Route path='/admin' element={<AdminPage/>}/>
-                <Route path='/contacts' element={<ContactsPage/>}/>
-                <Route path='/about' element={<AboutPage/>}/>
-            </Routes>
+            <div style={{ flex: '1 0 auto' }}>
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/main" element={<MainMenuPage />} />
+                    <Route path="*" element={<NotFound />} />
+                    <Route path='/basket' element={<BasketPage/>} />
+                    <Route path='/admin' element={<AdminPage/>}/>
+                    <Route path='/contacts' element={<ContactsPage/>}/>
+                    <Route path='/about' element={<AboutPage/>}/>
+                </Routes>
+            </div>
             <Footer />
         </div>
     );

@@ -1,11 +1,10 @@
 import styles from './ContactsPage.module.css';
-import logoVento from '../../assets/logo/logo.png';
+import { HeaderMenu } from '@components';
 
 export const ContactsPage = () => {
     return (
         <div className={styles.main}>
-            <img src={logoVento} alt="Vento" className={styles.logo_text} />
-            <h1>Contacts</h1>
+            <HeaderMenu />
             <div className={styles.address}>
                 <div className={styles.map}>
                     <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A470d91ad70e469df2c241e8522ab75f7b82a7db4611f733249c4aff088c204a2&amp;source=constructor" width="600" height="600"></iframe>
