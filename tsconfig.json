@@ -32,7 +32,8 @@
       "@pages": ["src/pages"],
       "@ui": ["src/shared/ui"],
       "@context/*":["src/context"],
-      "@helpers":["src/shared/helpers/index"]
+      "@helpers":["src/shared/helpers/index"],
+      "@API":["src/API/index"]
     },
   },
   "include": [

@@ -1,7 +1,17 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { env } = require('process');
 
-module.exports = {
+module.exports = (env, argv) =>{
+    const isProduction = argv.mode === 'production';
+    
+    // Определяем env файл на основе переданной переменной или mode
+    const envFile = env && env.ENV_FILE ? `.env.${env.ENV_FILE}` : 
+                    isProduction ? '.env.production' : '.env.local';
+
+    console.log('Loading environment from:', envFile); // Для отладки
+    return {
     entry: path.resolve(__dirname, './src/index.tsx'),
     module: {
         rules: [
@@ -41,6 +51,7 @@ module.exports = {
             '@ui': path.resolve(__dirname, 'src/shared/ui'),
             '@context/*': path.resolve(__dirname, 'src/context'),
             '@helpers': path.resolve(__dirname, 'src//shared/helpers/index'),
+            '@API': path.resolve(__dirname, 'src/API/index'),
             // другие алиасы...
         },
         extensions: ['.tsx', '.ts', '.js'],
@@ -60,13 +71,27 @@ module.exports = {
             template: './public/index.html',
             filename: '404.html',
         }),
+        
+        // Загружаем .env.local для разработки
+        new Dotenv({
+            path: isProduction ? '.env.production' : '.env.local',
+            systemvars: true, // Также загружать системные переменные
+            safe: true, // Не падать, если файл .env не найден
+            defaults: true // Использовать .env.example как шаблон (опционально)
+        }),
+        
+        // Или альтернативно - загружать разные файлы в зависимости от mode
+        new Dotenv({
+            path: `./.env.${argv.mode || 'development'}`,
+            defaults: true // fallback к .env
+        }),
     ],
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist'),
             publicPath: '/', // ✅ Добавьте и здесь
         },
-        port: 3000,
+        port: 5173,
         open: true,
         hot: true,
         historyApiFallback: {
@@ -74,4 +99,4 @@ module.exports = {
         },
     },
 };
- 
+};

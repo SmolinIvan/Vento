@@ -1,4 +1,3 @@
-
 import { DishType } from '@shared-types';
 import { createContext, FC, PropsWithChildren, useState } from 'react';
 
@@ -48,6 +47,7 @@ export const MenuProvider: FC<PropsWithChildren<object>> = ({ children }) => {
                 setFilteredDishes,
                 setDishes,
                 filterDishes,
+                // loadDishes,
             }}
         >
             {children}

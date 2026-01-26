@@ -3,9 +3,10 @@ import { MenuContext } from '@context/MenuContext';
 import { DishType } from '@shared-types';
 import { ModalUI } from '@ui';
 import { useContext, useState, useEffect } from 'react';
-import { DISHES } from '../../mockData/menuItems';
 import styles from './MainMenuPage.module.css';
 import logoVento from '../../assets/logo/logo.png';
+import { fetchAllDishes } from '@API';
+
 
 export const MainMenuPage: React.FC = () => {
     const { dishes, activeFilter, filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
@@ -14,9 +15,20 @@ export const MainMenuPage: React.FC = () => {
     const [currentDish, setCurrentDish] = useState<DishType | null>(null);
 
     useEffect(() => {
-        setDishes(DISHES);
-        setFilteredDishes(DISHES);
-    }, []);
+        const initializeMenu = async () => {
+            try {
+                // Пытаемся загрузить данные с сервера
+                const data = await fetchAllDishes();
+                setDishes(data);
+                setFilteredDishes(data);
+                console.log(data);
+            } catch (error) {
+                console.error('Не удалось загрузить данные', error);
+            }
+        };
+
+        initializeMenu().catch(error => console.error(error));
+    }, [setDishes, setFilteredDishes]);
 
     const handleFilterDishes = (dishType:string) => {
         filterDishes(dishType, dishes);
