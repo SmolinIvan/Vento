@@ -1,17 +1,27 @@
 .basket_item_info {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  font-family: 'Inter', sans-serif;
   width: 100%;
+  font-size: 16px;
+}
+
+.basket_dish_name{
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .basket_dish_price{
   margin-left: auto;
   margin-right: 10px;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .basket_counting{
   display: flex;
+  font-family: inherit;
+  font-size: inherit;
   gap: 10px;
   margin: 5px 0;
 }

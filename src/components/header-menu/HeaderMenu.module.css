@@ -19,4 +19,7 @@
     position: absolute;
     top: 100%;
     right: 0;
+    background-color: var(--bg-accent);
+    border-radius: var(--border-radius-xl);
+    border-color: black 2px solid;
 }
