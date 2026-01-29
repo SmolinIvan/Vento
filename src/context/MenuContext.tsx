@@ -13,7 +13,7 @@ type MenuContextState = {
 
 const defaultContextState: MenuContextState = {
     dishes: [],
-    activeFilter: 'all',
+    activeFilter: 'drinks',
     filteredDishes: [],
     setActiveFilter: () => {},
     setDishes: () => {},

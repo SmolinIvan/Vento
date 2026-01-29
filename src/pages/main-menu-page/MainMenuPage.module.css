@@ -1,5 +1,6 @@
 .main_menu_block {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
