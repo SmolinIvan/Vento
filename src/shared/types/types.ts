@@ -1,6 +1,6 @@
 export type DishCategory = 'drinks' | 'appetizers' | 'salads' | 'hot' | 'bakery' | 'bar';
 
-type DishEnergy = {
+export type DishEnergy = {
   kcal: number;
   protein: number;
   fat: number;
@@ -15,8 +15,19 @@ export type DishType = {
   type: DishCategory;
   price: number;
   description: string;
+  available: boolean;
 }
 
 export type BasketDishType = DishType & {
     count: number;
+};
+
+export type NewDish = {
+    name: string;
+    type: DishCategory,
+    energy: DishEnergy,
+    price: number;
+    description: string;
+    imageRef: string;
+    available: boolean;
 };

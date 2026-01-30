@@ -1,5 +1,5 @@
 import { DishType } from '@shared-types';
-import { createContext, FC, PropsWithChildren, useState } from 'react';
+import { createContext, FC, PropsWithChildren, useCallback, useState } from 'react';
 
 type MenuContextState = {
   dishes: DishType[]
@@ -28,14 +28,16 @@ export const MenuProvider: FC<PropsWithChildren<object>> = ({ children }) => {
     const [activeFilter, setActiveFilter] = useState<string>(defaultContextState.activeFilter);
     const [filteredDishes, setFilteredDishes] = useState<DishType[]>(defaultContextState.filteredDishes);
 
-    const filterDishes = (filterType: string) => {
+    const filterDishes = useCallback((filterType: string, dishesToFilter?: DishType[]) => {
+        const targetDishes = dishesToFilter ?? dishes;
+
         if (filterType === 'all') {
-            setFilteredDishes(dishes);
-            return;
+            setFilteredDishes(targetDishes);
+        } else {
+            const filtered = targetDishes.filter((dish) => dish.type === filterType);
+            setFilteredDishes(filtered);
         }
-        const filteredDishes = dishes.filter((dish) => dish.type === filterType);
-        setFilteredDishes(filteredDishes);
-    };
+    }, [dishes]);
 
     return (
         <MenuContext.Provider

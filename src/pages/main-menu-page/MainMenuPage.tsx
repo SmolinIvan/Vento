@@ -8,7 +8,7 @@ import { fetchAllDishes } from '@API';
 
 
 export const MainMenuPage: React.FC = () => {
-    const { dishes, activeFilter, filterDishes, setDishes , setFilteredDishes,setActiveFilter } = useContext(MenuContext);
+    const { dishes, activeFilter, filterDishes, setDishes ,setActiveFilter } = useContext(MenuContext);
 
     useEffect(() => {
         const initializeMenu = async () => {
@@ -23,7 +23,7 @@ export const MainMenuPage: React.FC = () => {
         };
 
         initializeMenu().catch(error => console.error(error));
-    }, [setDishes, setFilteredDishes, filterDishes]);
+    }, []);
 
     const handleFilterDishes = (dishType:string) => {
         filterDishes(dishType, dishes);
