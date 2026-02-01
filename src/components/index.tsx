@@ -5,7 +5,8 @@ export * from './dish-info';
 export * from './header-menu';
 export * from './menu-list';
 export * from './basket-pop-up';
-export * from './editor-form';
+export * from './forms/create-form';
+export * from './forms/delete-form';
 export * from './menu-item';
 export * from './footer';
 

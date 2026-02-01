@@ -1,13 +1,13 @@
 import { DishCategory, newDish } from '@shared-types';
 import { FC, useEffect, useState } from 'react';
-import styles from './EditorForm.module.css';
+import styles from './CreateForm.module.css';
 import { DropDownUI } from '@ui';
 
-interface EditorFormProps {
+interface CreateFormProps {
     onSubmit: (value: newDish) => void;
 }
 
-export const EditorForm: FC<EditorFormProps> = ({ onSubmit }) => {
+export const CreateForm: FC<CreateFormProps> = ({ onSubmit }) => {
     const [formData, setFormData] = useState<newDish>({
         name: '',
         type: 'salads',
@@ -67,6 +67,20 @@ export const EditorForm: FC<EditorFormProps> = ({ onSubmit }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         onSubmit(formData); // Передаём данные вовне
+        setFormData({
+            name: '',
+            type: 'salads',
+            energy: {
+                kcal: 0,
+                protein: 0,
+                fat: 0,
+                carbs: 0,
+            },
+            price: 0,
+            description: '',
+            imageRef: '',
+            available: true,
+        });
     };
 
     return (

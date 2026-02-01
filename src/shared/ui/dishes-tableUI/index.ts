@@ -1,0 +1,2 @@
+export {DishesTableUI} from './DishesTableUI';
+

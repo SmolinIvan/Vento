@@ -31,3 +31,21 @@ export async function postDish(dishData: newDish): Promise<DishType> {
 
     return await response.json() as DishType;
 };
+
+
+export async function deleteDish(id: number): Promise<DishType> {
+    const response = await fetch(`${API_URL}/menu/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        // body: JSON.stringify(dishData),
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json() as { error: string };
+        throw new Error(errorData.error || 'Не удалось создать блюдо');
+    }
+
+    return await response.json() as DishType;
+};

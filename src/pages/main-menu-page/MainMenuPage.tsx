@@ -2,28 +2,12 @@ import { DishFilter, MenuList, HeaderMenu } from '@components';
 import { MenuContext } from '@context/MenuContext';
 import { DishType } from '@shared-types';
 
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import styles from './MainMenuPage.module.css';
-import { fetchAllDishes } from '@API';
 
 
 export const MainMenuPage: React.FC = () => {
-    const { dishes, activeFilter, filterDishes, setDishes ,setActiveFilter } = useContext(MenuContext);
-
-    useEffect(() => {
-        const initializeMenu = async () => {
-            try {
-                // Пытаемся загрузить данные с сервера
-                const data = await fetchAllDishes();
-                setDishes(data);
-                filterDishes(activeFilter,data);
-            } catch (error) {
-                console.error('Не удалось загрузить данные', error);
-            }
-        };
-
-        initializeMenu().catch(error => console.error(error));
-    }, []);
+    const { dishes, activeFilter, filterDishes ,setActiveFilter } = useContext(MenuContext);
 
     const handleFilterDishes = (dishType:string) => {
         filterDishes(dishType, dishes);

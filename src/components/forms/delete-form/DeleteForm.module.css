@@ -1,0 +1,11 @@
+.delete_form_main_block {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.delete_form_input_block {
+    display: flex;
+    flex-direction: column;
+}

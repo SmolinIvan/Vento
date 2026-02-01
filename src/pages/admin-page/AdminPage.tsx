@@ -1,36 +1,37 @@
-import { EditorForm } from '@components';
-import React from 'react';
-// import { DISHES } from '../../mockData/menuItems';
+import { CreateForm, DeleteForm } from '@components';
+import React, { useContext } from 'react';
+import styles from './AdminPage.module.css';
 import  { newDish } from '@shared-types';
-import { postDish } from '@API';
+import { postDish , deleteDish } from '@API';
+import { MenuContext } from '@context/*';
+import { DishesTableUI } from '@ui';
 
 export const AdminPage: React.FC = () => {
-    // const navigate = useNavigate();
 
-    // const { dishes, setDishes, setFilteredDishes } = useContext(MenuContext);
+    const {dishes} = useContext(MenuContext);
 
-    // useEffect(() => {
-    //     setDishes(DISHES);
-    //     setFilteredDishes(DISHES);
-    // }, []);
-
-    const handleFormSubmit = (data: newDish) => {
-        // setDishes([data]);
-        // setFilteredDishes([data]);
-        postDish(data).then(response => {
-            console.log('Ответ сервера:', response);
-        }).catch(error => {
+    const handleCreateSubmit = (data: newDish) => {
+        postDish(data).catch(error => {
             console.error('Ошибка при отправке данных:', error);
         });
-        console.log('Полученные данные:', data);
-        // navigate('/main');
-        // Здесь можно отправить данные на сервер
-        // например: fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) })
+    };
+
+    const handleDeleteSubmit = (id: number) => {
+        deleteDish(id).catch(error => {
+            console.error('Ошибка при удалении данных:', error);
+        });
     };
 
     return (
         <div>
-            <EditorForm onSubmit={handleFormSubmit}/>
+            <h1 className={styles.title}>Админка</h1>
+            <div className={styles.forms_block}>
+                <CreateForm onSubmit={handleCreateSubmit}/>
+                <DeleteForm onSubmit={handleDeleteSubmit} />
+            </div>
+            <div className={styles.table_block}>
+                <DishesTableUI dishes={dishes} />
+            </div>
         </div>
     );
 };
