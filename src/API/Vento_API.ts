@@ -1,7 +1,7 @@
 import { DishType, newDish } from '@shared-types';
 
 // const API_URL = process.env.API_URL;
-const API_URL = process.env.API_URL;
+const API_URL = process.env.API_URL || 'http://api.smolinprojects.ru/api';
 
 export async function fetchAllDishes(): Promise<DishType[]> {
     const response = await fetch(`${API_URL}/menu`);
