@@ -1,7 +1,7 @@
 import { DishType, newDish } from '@shared-types';
 
 // const API_URL = process.env.API_URL;
-const API_URL = process.env.API_URL || 'http://api.smolinprojects.ru/api';
+const API_URL = process.env.API_URL || 'https://api.smolinprojects.ru/api';
 
 export async function fetchAllDishes(): Promise<DishType[]> {
     const response = await fetch(`${API_URL}/menu`);
@@ -15,11 +15,12 @@ export async function fetchAllDishes(): Promise<DishType[]> {
 }
 
 
-export async function postDish(dishData: newDish): Promise<DishType> {
+export async function postDish(dishData: newDish, authToken: string): Promise<DishType> {
     const response = await fetch(`${API_URL}/menu`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`,
         },
         body: JSON.stringify(dishData),
     });
@@ -33,11 +34,12 @@ export async function postDish(dishData: newDish): Promise<DishType> {
 };
 
 
-export async function deleteDish(id: number): Promise<DishType> {
+export async function deleteDish(id: number, authToken: string): Promise<DishType> {
     const response = await fetch(`${API_URL}/menu/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`,
         },
         // body: JSON.stringify(dishData),
     });
@@ -49,3 +51,5 @@ export async function deleteDish(id: number): Promise<DishType> {
 
     return await response.json() as DishType;
 };
+
+

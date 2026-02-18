@@ -1,5 +1,5 @@
 import { DishCategory, newDish } from '@shared-types';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import styles from './CreateForm.module.css';
 import { DropDownUI } from '@ui';
 
@@ -23,9 +23,9 @@ export const CreateForm: FC<CreateFormProps> = ({ onSubmit }) => {
         available: true,
     });
 
-    useEffect(() => {
-        console.log(formData);
-    }, [formData]);
+    // useEffect(() => {
+    //     console.log(formData);
+    // }, [formData]);
 
     const dishTypes: DishCategory[] = ['salads', 'hot', 'bakery', 'drinks', 'appetizers', 'bar'];
     const options = dishTypes.map(type => ({ value: type, label: type }));
@@ -67,20 +67,20 @@ export const CreateForm: FC<CreateFormProps> = ({ onSubmit }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         onSubmit(formData); // Передаём данные вовне
-        setFormData({
-            name: '',
-            type: 'salads',
-            energy: {
-                kcal: 0,
-                protein: 0,
-                fat: 0,
-                carbs: 0,
-            },
-            price: 0,
-            description: '',
-            imageRef: '',
-            available: true,
-        });
+        // setFormData({
+        //     name: '',
+        //     type: 'salads',
+        //     energy: {
+        //         kcal: 0,
+        //         protein: 0,
+        //         fat: 0,
+        //         carbs: 0,
+        //     },
+        //     price: 0,
+        //     description: '',
+        //     imageRef: '',
+        //     available: true,
+        // });
     };
 
     return (

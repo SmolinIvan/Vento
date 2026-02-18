@@ -31,3 +31,9 @@ export type NewDish = {
     imageRef: string;
     available: boolean;
 };
+
+export type User = {
+  username?: string;
+  email: string;
+  password: string;
+};

@@ -5,6 +5,7 @@ import App from './app/App';
 import { BrowserRouter } from 'react-router-dom';
 import { MenuProvider } from './context/MenuContext';
 import { BasketProvider } from './context/BasketContext';
+import { UserProvider } from './context/UserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -13,11 +14,13 @@ root.render(
         {/* Для деплоя basename='/Vento'
         надо разобратсья как поменять*/}
         <BrowserRouter basename='/'>
-            <MenuProvider>
-                <BasketProvider>
-                    <App />
-                </BasketProvider>
-            </MenuProvider>
+            <UserProvider>
+                <MenuProvider>
+                    <BasketProvider>
+                        <App />
+                    </BasketProvider>
+                </MenuProvider>
+            </UserProvider>
         </BrowserRouter>
     </React.StrictMode>,
 );

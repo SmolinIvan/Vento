@@ -10,18 +10,22 @@ const App: React.FC = () => {
 
     const {setDishes, filterDishes, activeFilter} = useContext(MenuContext);
     useEffect(() => {
-        const initializeMenu = async () => {
-            try {
-                // Пытаемся загрузить данные с сервера
-                const data = await fetchAllDishes();
-                setDishes(data);
-                filterDishes(activeFilter,data);
-            } catch (error) {
-                console.error('Не удалось загрузить данные', error);
-            }
-        };
+        // const initializeMenu = async () => {
+        //     try {
+        //         // Пытаемся загрузить данные с сервера
+        //         const data = await fetchAllDishes();
+        //         setDishes(data);
+        //         filterDishes(activeFilter,data);
+        //     } catch (error) {
+        //         console.error('Не удалось загрузить данные', error);
+        //     }
+        // };
 
-        initializeMenu().catch(error => console.error(error));
+        // initializeMenu().catch(error => console.error(error));
+        fetchAllDishes().then(data => {
+            setDishes(data);
+            filterDishes(activeFilter,data);
+        }).catch(error => console.error(error));
     }, []);
 
     return (
