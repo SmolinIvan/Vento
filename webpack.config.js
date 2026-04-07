@@ -61,7 +61,7 @@ module.exports = (env, argv) =>{
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-        publicPath: '/Vento/', // ✅ Важно: должен начинаться и заканчиваться с /
+        publicPath: '/', // ✅ Важно: должен начинаться и заканчиваться с /
     },
     plugins: [
         new HtmlWebpackPlugin({

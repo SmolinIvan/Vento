@@ -45,17 +45,17 @@ export const AdminPage: React.FC = () => {
         } else { console.log('Нет токена');};
     };
 
-    const handleAuthSubmit = () => {
-        console.log('Авторизация');
-        loginUserAPI({email: 'admin@coffee', password: 'admin123'})
-            .then(data => {
-                saveAuthToken(data.token);
-                setAuthToken(data.token);
-                setAuthenticated(true);
-            })
-            .catch(error => {console.error('Ошибка при авторизации:', error);
-            });
-    };
+    // const handleAuthSubmit = () => {
+    //     console.log('Авторизация');
+    //     loginUserAPI({email: 'admin@coffee', password: 'admin123'})
+    //         .then(data => {
+    //             saveAuthToken(data.token);
+    //             setAuthToken(data.token);
+    //             setAuthenticated(true);
+    //         })
+    //         .catch(error => {console.error('Ошибка при авторизации:', error);
+    //         });
+    // };
 
     // const handleRegiesterSubmit = () => {
     //     console.log('Авторизация');
@@ -66,7 +66,7 @@ export const AdminPage: React.FC = () => {
 
     if (!isAuthenticated) return (
         <div className={styles.forms_block}>
-            <ButtonUI onClick={handleAuthSubmit} type='button'>Авторизоваться</ButtonUI>
+            {/* <ButtonUI onClick={handleAuthSubmit} type='button'>Авторизоваться</ButtonUI> */}
             {/* <ButtonUI onClick={handleRegiesterSubmit} type='button'>Зарегистрироваться</ButtonUI> */}
         </div>
     );
@@ -77,7 +77,7 @@ export const AdminPage: React.FC = () => {
             <div className={styles.forms_block}>
                 <CreateForm onSubmit={handleCreateSubmit}/>
                 <DeleteForm onSubmit={handleDeleteSubmit} />
-                <ButtonUI onClick={handleAuthSubmit} type='button'>Авторизоваться</ButtonUI>
+                {/* <ButtonUI onClick={handleAuthSubmit} type='button'>Авторизоваться</ButtonUI> */}
                 {/* <ButtonUI onClick={handleRegiesterSubmit} type='button'>Зарегистрироваться</ButtonUI> */}
             </div>
             <div className={styles.table_block}>
