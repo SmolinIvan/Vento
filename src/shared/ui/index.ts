@@ -8,4 +8,5 @@ export * from './basketUI';
 export * from './basket-itemUI';
 export * from './basket-pop-upUI';
 export * from './drop-downUI';
+export * from './dishes-tableUI';
 export type {DishCategoryTranslated as FoodType} from '../constants';

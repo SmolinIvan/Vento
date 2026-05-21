@@ -1,3 +1,4 @@
+import styles from './DropDown.module.css';
 import React, { FC } from 'react';
 
 type Option = {
@@ -15,8 +16,8 @@ interface DropDownUIProps {
 
 export const DropDownUI: FC<DropDownUIProps>= ({onSelect, options, currentValue, name}) => {
     return (
-        <div>
-            <label>Тип блюда</label>
+        <div className={styles.dropdown_block}>
+            <label className={styles.dropdown_label}>Тип блюда</label>
             <select name={name} value={currentValue} onChange={onSelect} className="dropdown">
                 <option value="">Выберите вариант</option>
                 {options.map((option, index) => (

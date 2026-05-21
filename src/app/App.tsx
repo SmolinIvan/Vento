@@ -1,18 +1,47 @@
-import { LandingPage, MainMenuPage, BasketPage, AdminPage } from '@pages';
-import React from 'react';
+import { fetchAllDishes } from '@API';
+import { Footer } from '@components';
+import { MenuContext } from '@context/*';
+import { LandingPage, MainMenuPage, BasketPage, AdminPage, ContactsPage, AboutPage } from '@pages';
+import React, { useContext, useEffect } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
 const App: React.FC = () => {
+
+    const {setDishes, filterDishes, activeFilter} = useContext(MenuContext);
+    useEffect(() => {
+        // const initializeMenu = async () => {
+        //     try {
+        //         // Пытаемся загрузить данные с сервера
+        //         const data = await fetchAllDishes();
+        //         setDishes(data);
+        //         filterDishes(activeFilter,data);
+        //     } catch (error) {
+        //         console.error('Не удалось загрузить данные', error);
+        //     }
+        // };
+
+        // initializeMenu().catch(error => console.error(error));
+        fetchAllDishes().then(data => {
+            setDishes(data);
+            filterDishes(activeFilter,data);
+        }).catch(error => console.error(error));
+    }, []);
+
     return (
         <div className="app">
-            <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/main" element={<MainMenuPage />} />
-                <Route path="*" element={<NotFound />} />
-                <Route path='/basket' element={<BasketPage/>} />
-                <Route path='/admin' element={<AdminPage/>}/>
-            </Routes>
+            <div style={{ flex: '1 0 auto' }}>
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/main" element={<MainMenuPage />} />
+                    <Route path="*" element={<NotFound />} />
+                    <Route path='/basket' element={<BasketPage/>} />
+                    <Route path='/admin' element={<AdminPage/>}/>
+                    <Route path='/contacts' element={<ContactsPage/>}/>
+                    <Route path='/about' element={<AboutPage/>}/>
+                </Routes>
+            </div>
+            <Footer />
         </div>
     );
 };

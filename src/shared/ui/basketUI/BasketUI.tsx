@@ -15,7 +15,7 @@ export const BasketUI:FC<BasketUIProps> =({dishes, finalPrice, onAdd, onRemove}:
     return (
         <div className={styles.basket}>
             <h2>Корзина</h2>
-            {dishes.length === 0 && <p>Ваша корзина пуста</p>}
+            {dishes.length === 0 && <p className={styles.basket_empty}>Ваша корзина пуста</p>}
             <ul className={styles.basket_list}>
                 {dishes.map((addedDish) => (
                     <li className={styles.basket_item} key={addedDish.id}>
@@ -26,7 +26,7 @@ export const BasketUI:FC<BasketUIProps> =({dishes, finalPrice, onAdd, onRemove}:
             < div>
                 {dishes.length > 0 &&
                 <div className={styles.basket_total}>
-                    <p>Сумма: {finalPrice} рублей</p>
+                    <p className={styles.basket_total_price}>Сумма: {finalPrice} рублей</p>
                     <ButtonUI type='button' className={styles.button_buy}>Оформить заказ</ButtonUI>
                 </div>
                 }

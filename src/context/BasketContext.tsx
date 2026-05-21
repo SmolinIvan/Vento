@@ -1,6 +1,6 @@
 
 import { DishType } from '@shared-types';
-import { DISHES } from '../mockData/menuItems';
+// import { DISHES } from '../mockData/menuItems';
 import { createContext, FC, PropsWithChildren, useState } from 'react';
 
 export type BasketDish = DishType & {
@@ -17,9 +17,7 @@ type BasketContextState = {
 }
 
 const defaultContextState:BasketContextState = {
-    addedDishes: [{...DISHES[0],
-        count: 1,
-    }, {...DISHES[1], count: 1 }, {...DISHES[3], count: 1}, {...DISHES[7], count: 1}],
+    addedDishes: [],
     finalPrice: 0,
     setAddedDishes: () => {},
     addDish: () => {},
@@ -31,7 +29,7 @@ export const BasketContext = createContext<BasketContextState>(defaultContextSta
 
 
 export const BasketProvider: FC<PropsWithChildren<object>> = ({ children }) => {
-    const [addedDishes, setAddedDishes] = useState<BasketDish[]>(defaultContextState.addedDishes);
+    const [addedDishes, setAddedDishes] = useState<BasketDish[]>([]);
     const addDish = (dish: DishType) => {
         const firstDishIndex = addedDishes.findIndex((addedDish) => addedDish.id === dish.id);
         const safeCopy = [...addedDishes];

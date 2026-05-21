@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+};
+
+.image {
+    max-width: 580px;
+    max-height: 580px;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.about_us_description {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: start;
+}
+
+.text {
+    font-size: 35px;
+    font-family: 'Italiana', sans-serif;
+    margin-bottom: 20px;
+}
+
+.text:last-of-type {
+    margin-bottom: 0px;
+}
+
+.label {
+    color: var(--accent-primary);
+    font-family: 'Italiana', sans-serif;
+    font-size: 35px;
+}
